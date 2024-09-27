@@ -12,13 +12,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class splashClass {
-    private static final String EXERCISES_FILE = "Exercises.txt";
-    private static final String ANSWERS_FILE = "Answers.txt";
-    private static final String GRADE_FILE = "Grade.txt";
-
-    private static Integer num;
-    private static Integer area;
+public class SplashClass {
 
     public static void main(String[] args) throws IOException {
         if (args.length != 5){
@@ -28,9 +22,9 @@ public class splashClass {
             System.exit(0);
         }
         if (args[1].equals("-e")&&args[3].equals("-a")){
-            checkAnswer(args);
+            checkAnswer(args[2],args[4]);
         }else if (args[1].equals("-n")&&args[3].equals("-r")){
-            generateExercises(args);
+            generateExercises(Integer.parseInt(args[2]),Integer.parseInt(args[4]));
         }else{
             System.out.println("Argument syntax is incorrect");
             System.out.println("Generate Usage: Myapp.exe -n <题目数量> -r <参数范围>");
@@ -39,17 +33,14 @@ public class splashClass {
         }
     }
 
-    private static void generateExercises(String[] args) throws IOException {
-        for (int i=0; i < args.length; i++){
-            String s = args[i];
-            if (s.equals("-n")){
-                num = Integer.parseInt(args[i+1]);
-            }else if (s.equals("-r")){
-                area = Integer.parseInt(args[i+1]);
-            }
-        }
+    private static void generateExercises(Integer num,Integer area) throws IOException {
+
         int index=0;
         try {
+
+            String EXERCISES_FILE = "Exercises.txt";
+            String ANSWERS_FILE = "Answer.txt";
+
             for (Expression e : new Generator().generateExpressions(num, area)) {
                 index++;
                 FileIO.writeOutput(EXERCISES_FILE, index + ". " + e.getExpression());
@@ -60,22 +51,28 @@ public class splashClass {
         }
     }
 
-    private static void checkAnswer(String[] args) throws IOException {
-
+    private static void checkAnswer(String answerFile,String exercisesFile) {
         try {
-            List<String> myAnswer = new ArrayList();
-            List<String> myExercise = new ArrayList();
-            BufferedReader reader = new BufferedReader(new FileReader(ANSWERS_FILE));
+            String GRADE_FILE = "Grade.txt";
+            List<String> myAnswer = new ArrayList<>();
+            List<String> myExercise = new ArrayList<>();
+            BufferedReader reader = new BufferedReader(new FileReader(exercisesFile));
             String line;
+
+            //解析  序号. 表达式
             String regex = "(\\d+)\\.\\s*(.+)";
             Pattern pattern = Pattern.compile(regex);
+
+            //读取答案文件
             while((line=reader.readLine())!=null){
                 Matcher matcher = pattern.matcher(line);
                 if (matcher.find()) {
                     myAnswer.add(matcher.group(2));
                 }
             }
-            reader = new BufferedReader(new FileReader(EXERCISES_FILE));
+
+            //读取习题文件
+            reader = new BufferedReader(new FileReader(answerFile));
             while((line=reader.readLine())!=null){
                 Matcher matcher = pattern.matcher(line);
                 if (matcher.find()) {
@@ -86,23 +83,30 @@ public class splashClass {
             StringBuilder incorrectResult = new StringBuilder();
             int correct = 0;
             int incorrect = 0;
+
             correctResult.append("(");
             incorrectResult.append("(");
+
             for (int i=0;i<myAnswer.size();i++){
                 if (myAnswer.get(i).equals(new Expression(myExercise.get(i)).evaluate())){
-                    correctResult.append(i+",");
+                    correctResult.append(i+1).append(",");
                     correct++;
                 }else{
-                    incorrectResult.append(i+",");
+                    incorrectResult.append(i+1).append(",");
                     incorrect++;
                 }
             }
-            correctResult.deleteCharAt(correctResult.length()-1);
-            incorrectResult.deleteCharAt(incorrectResult.length()-1);
+
+            if (correct!=0){
+                correctResult.deleteCharAt(correctResult.length()-1);
+            }
+            if (incorrect!=0){
+                incorrectResult.deleteCharAt(incorrectResult.length()-1);
+            }
             correctResult.append(")");
             incorrectResult.append(")");
             FileIO.writeOutput(GRADE_FILE,"Correct: "+correct+" "+correctResult);
-            FileIO.writeOutput(GRADE_FILE,"Correct: "+incorrect+" "+incorrectResult);
+            FileIO.writeOutput(GRADE_FILE,"Wrong: "+incorrect+" "+incorrectResult);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

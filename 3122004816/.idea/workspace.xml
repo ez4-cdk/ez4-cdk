@@ -5,10 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="638d4035-b2af-42c6-b946-d80e43e316eb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/algorithm/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plagiarismChecker/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/plagiarismChecker/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plagiarismChecker/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/plagiarismChecker/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plagiarismChecker/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/plagiarismChecker/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/src/main/java/com/softwareClass/entity/Fraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/src/main/java/com/softwareClass/entity/Fraction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/src/main/java/com/softwareClass/splashClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/src/main/java/com/softwareClass/SplashClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/src/main/java/com/softwareClass/util/ExpressionEvaluator.java" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/src/main/java/com/softwareClass/util/ExpressionEvaluator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/src/main/java/com/softwareClass/util/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/src/main/java/com/softwareClass/util/Generator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/target/classes/com/softwareClass/entity/Expression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/target/classes/com/softwareClass/entity/Fraction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/target/classes/com/softwareClass/splashClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/target/classes/com/softwareClass/util/ExpressionEvaluator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/target/classes/com/softwareClass/util/FileIO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/target/classes/com/softwareClass/util/Generator.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,30 +63,38 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.ExpressionEvaluator.executor": "Run",
-    "Application.generator.executor": "Run",
-    "Application.splashClass.executor": "Run",
-    "JUnit.TestExpression.executor": "Run",
-    "JUnit.TestGenerator.executor": "Coverage",
-    "Maven.algorithm [clean].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/11298/Desktop/3122004816/algorithm/src/main/java/com/softwareClass",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Problems",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "configurable.group.editor",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.ExpressionEvaluator.executor&quot;: &quot;Run&quot;,
+    &quot;Application.generator.executor&quot;: &quot;Run&quot;,
+    &quot;Application.splashClass.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ExpressionEvaluatorTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ExpressionEvaluatorTest.testEmptyExpression.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ExpressionTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FileIOTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FractionTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GeneratorTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SplashClassTest.testCheckAnswer.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SplashClassTest.testGenerateExercises.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestExpression.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestGenerator.executor&quot;: &quot;Coverage&quot;,
+    &quot;Maven.algorithm [clean].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/11298/Desktop/3122004816/algorithm/src/main/java/com/softwareClass&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\11298\Desktop\3122004816\algorithm\src\main\java\com\softwareClass" />
@@ -87,59 +103,79 @@
       <recent name="com.softwareClass.util" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.generator">
-    <configuration name="ExpressionEvaluator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.softwareClass.util.ExpressionEvaluator" />
-      <module name="algorithm" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.softwareClass.entity.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.SplashClassTest.testGenerateExercises">
     <configuration name="generator" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="D:/jdk" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="com.softwareClass.splashClass" />
+      <option name="MAIN_CLASS_NAME" value="com.softwareClass.SplashClass" />
       <module name="algorithm" />
       <option name="PROGRAM_PARAMETERS" value="Myapp.exe -e Exercises.txt -a Answer.txt" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestExpression" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ExpressionEvaluatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="algorithm" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestExpression" />
+      <option name="MAIN_CLASS_NAME" value="ExpressionEvaluatorTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestGenerator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FileIOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="algorithm" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestGenerator" />
+      <option name="MAIN_CLASS_NAME" value="FileIOTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GeneratorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="algorithm" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GeneratorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SplashClassTest.testCheckAnswer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="algorithm" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SplashClassTest" />
+      <option name="METHOD_NAME" value="testCheckAnswer" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SplashClassTest.testGenerateExercises" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="algorithm" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SplashClassTest" />
+      <option name="METHOD_NAME" value="testGenerateExercises" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
       <item itemvalue="Application.generator" />
-      <item itemvalue="Application.ExpressionEvaluator" />
-      <item itemvalue="JUnit.TestExpression" />
-      <item itemvalue="JUnit.TestGenerator" />
+      <item itemvalue="JUnit.SplashClassTest.testCheckAnswer" />
+      <item itemvalue="JUnit.SplashClassTest.testGenerateExercises" />
+      <item itemvalue="JUnit.ExpressionEvaluatorTest" />
+      <item itemvalue="JUnit.FileIOTest" />
+      <item itemvalue="JUnit.GeneratorTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ExpressionEvaluator" />
-        <item itemvalue="JUnit.TestGenerator" />
-        <item itemvalue="JUnit.TestExpression" />
+        <item itemvalue="JUnit.SplashClassTest.testGenerateExercises" />
+        <item itemvalue="JUnit.SplashClassTest.testCheckAnswer" />
+        <item itemvalue="JUnit.GeneratorTest" />
+        <item itemvalue="JUnit.FileIOTest" />
+        <item itemvalue="JUnit.ExpressionEvaluatorTest" />
       </list>
     </recent_temporary>
   </component>
@@ -170,6 +206,9 @@
       <workItem from="1727320293122" duration="7411000" />
       <workItem from="1727337053214" duration="10715000" />
       <workItem from="1727401067702" duration="5413000" />
+      <workItem from="1727420055947" duration="7045000" />
+      <workItem from="1727434275671" duration="2561000" />
+      <workItem from="1727436879026" duration="6000" />
     </task>
     <servers />
   </component>

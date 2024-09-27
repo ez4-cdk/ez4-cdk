@@ -4,13 +4,13 @@ import com.softwareClass.entity.Fraction;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Stack;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ExpressionEvaluator {
 
     public Fraction evaluate(String expression) {
+        if (expression.isEmpty())throw new IllegalArgumentException("表达式为空!");
         String result = calculate(expression);
         return Fraction.fromString(result);
     }
@@ -19,17 +19,20 @@ public class ExpressionEvaluator {
         if (expression.isEmpty()) {
             return "";
         }
-        Pattern pattern = Pattern.compile("\\((.*?)\\)");
+
+        Pattern pattern = Pattern.compile("\\(([^()]*)\\)");
         Matcher matcher = pattern.matcher(expression);
 
-        if (matcher.find()) {
+        while (matcher.find()) {
             String insideBrackets = matcher.group(1); // 获取括号内的内容
-            String calculateInsideBracket = calculate(insideBrackets);
-            return calculate(expression.replaceAll("\\(.*?\\)", calculateInsideBracket));
-        } else {
-            return evaluateExpression(expression).toString();
+            String calculateInsideBracket = evaluateExpression(insideBrackets).toString();
+            expression = expression.replace(matcher.group(0), calculateInsideBracket);
+            matcher.reset(expression);
         }
+
+        return evaluateExpression(expression).toString();
     }
+
 
     private Fraction evaluateExpression(String expression) {
         String[] args = expression.split(" ");
@@ -44,7 +47,7 @@ public class ExpressionEvaluator {
                 String operator = args[i];
                 if ("*".equals(operator) || "/".equals(operator)) {
                     Fraction secondFraction = Fraction.fromString(args[++i]);
-                    Fraction firstFraction = fractions.remove(fractions.size() - 1);
+                    Fraction firstFraction = fractions.removeLast();
                     if ("*".equals(operator)) {
                         fractions.add(firstFraction.multiply(secondFraction));
                     } else {
@@ -57,7 +60,7 @@ public class ExpressionEvaluator {
         }
 
         // 第二遍扫描，处理加法和减法
-        Fraction result = fractions.get(0);
+        Fraction result = fractions.getFirst();
         for (int j = 0; j < operators.size(); j++) {
             switch (operators.get(j)) {
                 case "+" -> result = result.add(fractions.get(j + 1));

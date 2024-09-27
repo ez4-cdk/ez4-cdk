@@ -3,25 +3,22 @@ package com.softwareClass.entity;
 public class Fraction {
     private int num; // 整数部分
     private int numerator;   // 分子
+    private int denominator; // 分母
 
+    //三个属性的getter
     public int getNum() {
         return num;
-    }
-
-    public void setNum(int num) {
-        this.num = num;
     }
 
     public int getNumerator() {
         return numerator;
     }
 
-    public void setDenominator(int denominator) {
-        this.denominator = denominator;
+    public int getDenominator() {
+        return denominator;
     }
 
-    private int denominator; // 分母
-
+    //构造函数
     public Fraction(int numerator, int denominator) {
         if (denominator == 0) throw new IllegalArgumentException("分母不能为零");
         this.numerator = numerator;
@@ -29,6 +26,7 @@ public class Fraction {
         simplify(); // 在构造时简化分数
     }
 
+    //生成一个比本分数还大的分数
     public Fraction generateABiggerFraction(){
         if (this.num==0&&this.numerator==0)return new Fraction(1,1);
         int thisNumerator = this.num*this.denominator+this.numerator;
@@ -41,8 +39,9 @@ public class Fraction {
         return new Fraction(thisNumerator,thisDenominator);
     }
 
+    //从字符串解析出分数
     public static Fraction fromString(String str) {
-        int denominator,numerator,num=0;
+        int denominator,numerator,num;
         String[] temp1,temp2;
         if (str.contains("/")){
             if (str.contains("'")){
@@ -56,13 +55,14 @@ public class Fraction {
                 temp1 = str.split("/");
                 denominator = Integer.parseInt(temp1[1]);
                 numerator = Integer.parseInt(temp1[0]);
-                return new Fraction(+numerator,denominator);
+                return new Fraction(numerator,denominator);
             }
         }else{
             return new Fraction(Integer.parseInt(str),1);
         }
     }
 
+    //加法，分母相乘，分子交叉乘分母并相加
     public Fraction add(Fraction other) {
         int commonDenominator = this.denominator * other.denominator;
         int newNumerator = (this.numerator + this.num * this.denominator) * other.denominator +
@@ -70,6 +70,7 @@ public class Fraction {
         return new Fraction(newNumerator, commonDenominator);
     }
 
+    //减法，分母相乘，分子交叉乘分母并相减
     public Fraction subtract(Fraction other) {
         int commonDenominator = this.denominator * other.denominator;
         int newNumerator = (this.numerator + this.num * this.denominator) * other.denominator -
@@ -77,12 +78,14 @@ public class Fraction {
         return new Fraction(newNumerator, commonDenominator);
     }
 
+    //乘法，分子分母对应相乘
     public Fraction multiply(Fraction other) {
         int newNumerator = (this.numerator + this.num * this.denominator) * (other.numerator + other.num * other.denominator);
         int newDenominator = this.denominator * other.denominator;
         return new Fraction(newNumerator, newDenominator);
     }
 
+    //除法，分子分母交叉相乘
     public Fraction divide(Fraction other) {
         if (other.numerator == 0 && other.num == 0) throw new IllegalArgumentException("不能除以零");
         int newNumerator = (this.numerator + this.num * this.denominator) * other.denominator;
@@ -90,6 +93,7 @@ public class Fraction {
         return new Fraction(newNumerator, newDenominator);
     }
 
+    //化简分数
     private void simplify() {
         int gcd = gcd(Math.abs(numerator), Math.abs(denominator)); // 计算最大公约数
 
@@ -106,6 +110,7 @@ public class Fraction {
         }
     }
 
+    //求最大公约数
     private int gcd(int a, int b) {
         while (b != 0) {
             int temp = b;
