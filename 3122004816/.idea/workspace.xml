@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="638d4035-b2af-42c6-b946-d80e43e316eb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/algorithm/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plagiarismChecker/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/plagiarismChecker/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plagiarismChecker/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/plagiarismChecker/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plagiarismChecker/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/plagiarismChecker/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ez4-cdk&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ez4-cdk/ez4-cdk.git&quot;,
+    &quot;accountId&quot;: &quot;8f1fbbc3-adf6-4ed8-83c6-0a5c4c9bd7b5&quot;
+  }
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\apache-maven-3.9.8\conf\repository" />
+        <option name="userSettingsFile" value="D:\apache-maven-3.9.8\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2mXq3ObVnIXemFLC1y0fSVtO4IH" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ExpressionEvaluator.executor": "Run",
+    "Application.generator.executor": "Run",
+    "Application.splashClass.executor": "Run",
+    "JUnit.TestExpression.executor": "Run",
+    "JUnit.TestGenerator.executor": "Coverage",
+    "Maven.algorithm [clean].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/11298/Desktop/3122004816/algorithm/src/main/java/com/softwareClass",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "configurable.group.editor",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\11298\Desktop\3122004816\algorithm\src\main\java\com\softwareClass" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.softwareClass.util" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.generator">
+    <configuration name="ExpressionEvaluator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.softwareClass.util.ExpressionEvaluator" />
+      <module name="algorithm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.softwareClass.entity.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="generator" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="D:/jdk" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.softwareClass.splashClass" />
+      <module name="algorithm" />
+      <option name="PROGRAM_PARAMETERS" value="Myapp.exe -e Exercises.txt -a Answer.txt" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestExpression" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="algorithm" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestExpression" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestGenerator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="algorithm" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestGenerator" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.generator" />
+      <item itemvalue="Application.ExpressionEvaluator" />
+      <item itemvalue="JUnit.TestExpression" />
+      <item itemvalue="JUnit.TestGenerator" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ExpressionEvaluator" />
+        <item itemvalue="JUnit.TestGenerator" />
+        <item itemvalue="JUnit.TestExpression" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="638d4035-b2af-42c6-b946-d80e43e316eb" name="Changes" comment="" />
+      <created>1727233068408</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1727233068408</updated>
+      <workItem from="1727233069413" duration="3758000" />
+      <workItem from="1727249320368" duration="4411000" />
+      <workItem from="1727258079260" duration="3222000" />
+      <workItem from="1727263397257" duration="2568000" />
+      <workItem from="1727267794895" duration="1030000" />
+      <workItem from="1727279955580" duration="431000" />
+      <workItem from="1727311039295" duration="4814000" />
+      <workItem from="1727315968583" duration="291000" />
+      <workItem from="1727320293122" duration="7411000" />
+      <workItem from="1727337053214" duration="10715000" />
+      <workItem from="1727401067702" duration="5413000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/3122004816$TestGenerator.ic" NAME="TestGenerator Coverage Results" MODIFIED="1727253395116" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+  </component>
+</project>

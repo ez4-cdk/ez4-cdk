@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03c04160-0592-4c4d-ad4f-45e48eaa9d9b" name="Changes" comment="first commit" />
+    <list default="true" id="03c04160-0592-4c4d-ad4f-45e48eaa9d9b" name="Changes" comment="first commit">
+      <change afterPath="$PROJECT_DIR$/../algorithm/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,45 +81,45 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.plagiarismChecker.executor&quot;: &quot;JProfiler&quot;,
-    &quot;JUnit.All in plagiarismChecker.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.ExtractorTest.testExtractWordFrequency_withChineseText.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.FileIOTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PlagiarismCheckerTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.testExtractor.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.testExtractor.testExtractWordFrequency_withChineseText.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.testFileIO.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.testplagiarismchecker.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.testplagiarismchecker.testCalculateCosineSimilarity_NonZeroSimilarity.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.main [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.main [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.plagiarismChecker [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.plagiarismChecker [package].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/11298/Desktop/3122004816/plagiarismChecker&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.plagiarismChecker.executor": "JProfiler",
+    "JUnit.All in plagiarismChecker.executor": "Coverage",
+    "JUnit.ExtractorTest.testExtractWordFrequency_withChineseText.executor": "Run",
+    "JUnit.FileIOTest.executor": "Run",
+    "JUnit.PlagiarismCheckerTest.executor": "Run",
+    "JUnit.testExtractor.executor": "Coverage",
+    "JUnit.testExtractor.testExtractWordFrequency_withChineseText.executor": "Coverage",
+    "JUnit.testFileIO.executor": "Run",
+    "JUnit.testplagiarismchecker.executor": "Run",
+    "JUnit.testplagiarismchecker.testCalculateCosineSimilarity_NonZeroSimilarity.executor": "Run",
+    "Maven.main [clean].executor": "Run",
+    "Maven.main [package].executor": "Run",
+    "Maven.plagiarismChecker [clean].executor": "Run",
+    "Maven.plagiarismChecker [package].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/IDEA_project/sport-springboot",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\11298\Desktop\plagiarismChecker\src\main\java\com\softwareClass" />
       <recent name="D:\IDEA_project\plagiarismChecker\src\main\java\com" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ExtractorTest.testExtractWordFrequency_withChineseText">
+  <component name="RunManager" selected="JUnit.All in plagiarismChecker">
     <configuration name="All in plagiarismChecker" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="plagiarismChecker" />
       <option name="PACKAGE_NAME" value="" />
@@ -203,6 +205,8 @@
       <workItem from="1726128034097" duration="604000" />
       <workItem from="1726128746894" duration="150000" />
       <workItem from="1726129685684" duration="71000" />
+      <workItem from="1727051681726" duration="639000" />
+      <workItem from="1727077531329" duration="32000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
