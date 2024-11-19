@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="searchViewModel"
+            type="com.delta.playandroid.viewmodel.SearchViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- 工具栏搜索框 -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#03A9F4"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_marginVertical="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/back"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:src="@drawable/back"
+                    android:layout_width="20dp"
+                    android:layout_height="50dp">
+
+                </ImageView>
+                <SearchView
+                    android:clickable="true"
+                    android:background="@drawable/rounded_corner"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/back"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginStart="15dp"
+                    android:id="@+id/sv_search"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:queryHint="请输入关键字搜索"
+                    android:iconifiedByDefault="false"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:textColor="#38088C"
+                    android:background="@color/transparent"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginStart="30dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/sv_search"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:id="@+id/btn_action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:text="@string/search"
+                    android:layout_gravity="center_vertical" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/search_container"
+            app:layout_constraintVertical_weight="1"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

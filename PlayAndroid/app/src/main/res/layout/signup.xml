@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="signUpViewModel"
+            type="com.delta.playandroid.viewmodel.SignUpViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            app:layout_constraintBottom_toTopOf="@id/usernameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/RegisterTag"
+            android:textSize="32sp"
+            android:textAlignment="center">
+        </TextView>
+
+        <com.google.android.material.textfield.TextInputLayout
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:id="@+id/usernameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/passwordLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                app:layout_constraintWidth_max="1000dp"
+                android:background="@color/white"
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:hint="@string/username"
+                android:text="@={signUpViewModel.usnInput}"
+                app:layout_constraintVertical_bias="0.555"
+                tools:layout_editor_absoluteX="0dp"
+                tools:ignore="VisualLintTextFieldSize" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintWidth_max="1000dp"
+            android:id="@+id/passwordLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:background="@color/white"
+                android:id="@+id/password"
+                android:inputType="textPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:hint="password"
+                android:text="@={signUpViewModel.pwdInput}"
+                app:layout_constraintVertical_bias="0.555"
+                tools:layout_editor_absoluteX="0dp"
+                tools:ignore="HardcodedText,VisualLintTextFieldSize"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:id="@+id/rePasswordLayout"
+            android:layout_width="match_parent"
+            app:layout_constraintWidth_max="1000dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/passwordLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:background="@color/white"
+                android:id="@+id/rePassword"
+                android:inputType="textPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:hint="@string/repassword"
+                android:text="@={signUpViewModel.rePwdInput}"
+                app:layout_constraintBottom_toBottomOf="@id/usernameLayout"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="VisualLintTextFieldSize" />
+
+            <Button
+                android:id="@+id/login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/RegisterTag"
+                android:onClick="@{()->signUpViewModel.signUp()}"
+                android:textSize="24sp"
+                app:layout_constraintTop_toTopOf="@id/passwordLayout"
+                tools:ignore="DuplicateSpeakableTextCheck,VisualLintButtonSize">
+
+            </Button>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/jump"
+            android:layout_marginBottom="80dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/JumpToLoginTag"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

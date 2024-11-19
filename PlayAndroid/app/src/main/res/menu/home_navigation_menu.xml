@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/head_page_navigation"
+        android:title="@string/app_home_head_tag_name"
+        android:icon="@drawable/head_page_icon"
+        />
+
+    <item
+        android:id="@+id/tree_page_navigation"
+        android:title="@string/app_home_tree_tag_name"
+        android:icon="@drawable/tree_page_icon"
+        />
+
+    <item
+        android:id="@+id/project_page_navigation"
+        android:title="@string/app_home_project_tag_name"
+        android:icon="@drawable/project_page_icon"
+        />
+</menu>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?><!-- 搜索热词 -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="searchViewModel"
+            type="com.delta.playandroid.viewmodel.SearchViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/hotkey_card"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/HotKey"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <com.google.android.flexbox.FlexboxLayout
+                    android:id="@+id/hotkey_card_container"
+                    app:flexWrap="wrap"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- 搜索历史 -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/history_card"
+            app:layout_constraintTop_toBottomOf="@id/hotkey_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/history_tag"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/SearchHistory"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/clear_history_tag"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:onClick="@{()->searchViewModel.cleanHistory()}"
+                    android:text="清空历史"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <com.google.android.flexbox.FlexboxLayout
+                    android:id="@+id/history_card_container"
+                    app:flexWrap="wrap"
+                    app:layout_constraintTop_toBottomOf="@id/history_tag"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

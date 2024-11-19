@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <variable
+            name="articleViewModel"
+            type="com.delta.playandroid.viewmodel.ArticleViewModel" />
+        <variable
+            name="bannerViewModel"
+            type="com.delta.playandroid.viewmodel.BannerViewModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/home_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/head_page_banner"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:background="#0D000000"
+            android:id="@+id/head_page_rv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+</layout>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="fastLoginViewModel"
+            type="com.delta.playandroid.viewmodel.FastLoginViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/no_auto_login_access"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:textSize="24sp"
+            android:text="@string/No_AutoLoginUsers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+        <TextView
+            android:layout_marginStart="40dp"
+            android:id="@+id/fast_login_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="80dp"
+            android:text="@string/Fast_Login"
+            android:textSize="24sp"
+            android:gravity="center">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="点击账号即可自动登录"
+            app:layout_constraintTop_toBottomOf="@id/fast_login_tag"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="10dp"
+            >
+
+        </TextView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:background="@color/white"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:id="@+id/username_rv"
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fast_login_tag"
+            app:layout_constraintBottom_toTopOf="@id/cancel_button">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <Button
+            android:id="@+id/cancel_button"
+            android:text="@string/Cancel"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:layout_marginBottom="80dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+        </Button>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
