@@ -4,7 +4,7 @@ import com.delta.playandroid.common.BasePagingDataSource
 import com.delta.playandroid.data.api.SystemAPI
 import com.delta.playandroid.data.model.bean.entity.Article
 
-class ArticleInCardItemPagingDataSource(
+class CardsArticleDS(
     private val systemAPI: SystemAPI,
     private val cid:Int
 ):BasePagingDataSource<Article>({

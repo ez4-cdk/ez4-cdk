@@ -29,7 +29,11 @@ class RvInPage(
 
         databinding.lifecycleOwner = viewLifecycleOwner
 
-        rvAdapter = ArticleListAdapter(true,this)
+        /**
+         * @Date:2024/11/19
+         * @Description: 更正了设置为收藏页面的错误
+         */
+        rvAdapter = ArticleListAdapter(false,this)
 
         databinding.rv.adapter = rvAdapter
         databinding.rv.layoutManager = LinearLayoutManager(requireContext())

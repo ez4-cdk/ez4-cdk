@@ -5,14 +5,11 @@ import androidx.lifecycle.MutableLiveData
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
-import androidx.paging.PagingSource
-import com.delta.playandroid.common.BaseResponse
 import com.delta.playandroid.data.api.ApiClient
 import com.delta.playandroid.common.Result
 import com.delta.playandroid.data.model.bean.entity.Article
 import com.delta.playandroid.data.model.bean.entity.Column
-import com.delta.playandroid.data.source.ArticleInCardItemPagingDataSource
-import dagger.hilt.android.scopes.ActivityScoped
+import com.delta.playandroid.data.source.CardsArticleDS
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
@@ -74,7 +71,7 @@ class SystemRepo @Inject constructor(
     fun getArticlePaging(cid:Int):Flow<PagingData<Article>>{
         return Pager(
             config = PagingConfig(pageSize = 40, enablePlaceholders = true),
-            pagingSourceFactory = {ArticleInCardItemPagingDataSource(apiService,cid)}
+            pagingSourceFactory = {CardsArticleDS(apiService,cid)}
         ).flow
     }
 

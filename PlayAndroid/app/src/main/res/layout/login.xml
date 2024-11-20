@@ -11,7 +11,8 @@
     <FrameLayout
         android:id="@+id/loginPage"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -27,12 +28,13 @@
 
                 <ImageButton
                     android:id="@+id/autoLogin_user"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:scaleType="centerCrop"
                     android:src="@drawable/fast_login"
-                    tools:ignore="ContentDescription,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+                    tools:ignore="ContentDescription,SpeakableTextPresentCheck,TouchTargetSizeCheck" >
+                </ImageButton>
 
             </androidx.cardview.widget.CardView>
 
@@ -54,18 +56,15 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:background="@color/white"
                     android:id="@+id/username"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="24sp"
-                    android:text="@={loginViewModel.usnInput}"
                     android:hint="@string/username"
+                    android:text="@={loginViewModel.usnInput}"
+                    android:textSize="24sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.555"
-                    tools:layout_editor_absoluteX="0dp"
-                    />
+                    tools:ignore="TouchTargetSizeCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -76,19 +75,16 @@
                 android:layout_marginTop="20dp">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:background="@color/white"
                     android:id="@+id/password"
-                    android:inputType="textPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="24sp"
-                    android:text="@={loginViewModel.pwdInput}"
                     android:hint="@string/password"
+                    android:inputType="textPassword"
+                    android:text="@={loginViewModel.pwdInput}"
+                    android:textSize="24sp"
                     app:layout_constraintBottom_toBottomOf="@id/usernameLayout"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.555"
-                    tools:layout_editor_absoluteX="0dp"
-                    />
+                    tools:ignore="TouchTargetSizeCheck" />
 
                 <Button
                     android:maxLength="@integer/material_motion_duration_medium_1"
@@ -126,32 +122,30 @@
                 app:layout_constraintLeft_toLeftOf="parent"/>
 
             <CheckBox
-                android:textSize="16sp"
-                android:textStyle="bold"
+                android:id="@+id/rememberPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/RememberPassword"
-                android:id="@+id/rememberPassword"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
                 android:layout_marginBottom="70dp"
-                android:layout_marginEnd="20dp"
                 android:checked="@={loginViewModel.rememberPassword}"
-                />
+                android:minHeight="48dp"
+                android:text="@string/RememberPassword"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
 
             <CheckBox
-                android:textSize="16sp"
-                android:textStyle="bold"
+                android:id="@+id/AutoLogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/AutoLogin"
-                android:id="@+id/AutoLogin"
-                app:layout_constraintBottom_toTopOf="@id/rememberPassword"
-                app:layout_constraintRight_toRightOf="parent"
-                android:layout_marginBottom="0dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
                 android:checked="@={loginViewModel.autoLogin}"
-                />
+                android:minHeight="48dp"
+                android:text="@string/AutoLogin"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/rememberPassword"
+                app:layout_constraintRight_toRightOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>
 </layout>

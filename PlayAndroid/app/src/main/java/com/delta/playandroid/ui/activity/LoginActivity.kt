@@ -47,7 +47,7 @@ class LoginActivity : BaseActivity() {
             .commit()
     }
 
-    fun onLoginSuccess(user: User){
+    fun onLoginSuccess(user: User?){
         (application as WanAndroidApp).setUser(user)
         val intent = Intent(this,HomeActivity::class.java)
         startActivity(intent)

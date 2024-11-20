@@ -18,10 +18,10 @@ import javax.inject.Inject
 @HiltAndroidApp
 class WanAndroidApp : Application() {
 
-    private var _user = MutableLiveData<User>()
-    val user:LiveData<User> get() = _user
+    private var _user = MutableLiveData<User?>()
+    val user:LiveData<User?> get() = _user
 
-    fun setUser(user: User) {
+    fun setUser(user: User?) {
         _user.postValue(user)
     }
 

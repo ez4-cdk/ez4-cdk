@@ -1,6 +1,8 @@
 package com.delta.playandroid.ui.adapter
 
+import android.annotation.SuppressLint
 import android.media.Image
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -17,15 +19,21 @@ class FastLogInUserAdapter(
         fun login(position: Int)
     }
 
-    private val userList = ArrayList<User>()
+    private var userList = ArrayList<User>()
     inner class viewHolder(view: View):RecyclerView.ViewHolder(view){
         val username = view.findViewById<TextView>(R.id.username)
         val avatar = view.findViewById<ImageView>(R.id.avatar)
     }
+
+    /**
+     * @Date 2024/11/19
+     * @Description 修复了进入游客模式后点击收藏时闪退的BUG
+     */
+    @SuppressLint("NotifyDataSetChanged")
     fun initUserList(users:ArrayList<User>){
         userList.clear()
         userList.addAll(users)
-        notifyItemInserted(0)
+        notifyDataSetChanged()
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): viewHolder {
         return viewHolder(View.inflate(parent.context,R.layout.fast_login_user,null))
@@ -36,8 +44,9 @@ class FastLogInUserAdapter(
         holder.itemView.setOnClickListener {
             onLogInPosition.login(position)
         }
-        //头像TODO
     }
 
-    override fun getItemCount(): Int = userList.size
+    override fun getItemCount(): Int {
+        return userList.size
+    }
 }

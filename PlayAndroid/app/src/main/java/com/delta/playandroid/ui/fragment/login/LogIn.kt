@@ -30,6 +30,10 @@ class LogIn:BaseFragment<LoginBinding>(R.layout.login,LoginBinding::bind) {
             }
         }
 
+        databinding.freeMode.setOnClickListener {
+            (activity as LoginActivity).onLoginSuccess(null)
+        }
+
         databinding.jump.setOnClickListener {
             (activity as LoginActivity).switchToSignUp()
         }

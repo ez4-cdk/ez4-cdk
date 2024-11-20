@@ -11,7 +11,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="16dp">
 
         <TextView
             app:layout_constraintBottom_toTopOf="@id/usernameLayout"
@@ -32,7 +33,6 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 app:layout_constraintWidth_max="1000dp"
-                android:background="@color/white"
                 android:id="@+id/username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -56,7 +56,6 @@
             >
 
             <com.google.android.material.textfield.TextInputEditText
-                android:background="@color/white"
                 android:id="@+id/password"
                 android:inputType="textPassword"
                 android:layout_width="match_parent"
@@ -80,7 +79,6 @@
             app:layout_constraintTop_toBottomOf="@id/passwordLayout">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:background="@color/white"
                 android:id="@+id/rePassword"
                 android:inputType="textPassword"
                 android:layout_width="match_parent"
