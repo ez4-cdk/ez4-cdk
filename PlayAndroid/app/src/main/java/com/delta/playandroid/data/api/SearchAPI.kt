@@ -29,4 +29,16 @@ interface SearchAPI {
         @Path("page") page:Int,
         @Field("k") key:String
     ):Response<BaseResponse<ArticlePack>>
+
+    // 收藏
+    @POST("/lg/collect/{id}/json")
+    suspend fun collectInsideArticle(
+        @Path("id") id:Int
+    ): Response<BaseResponse<Any>>
+
+    // 取消收藏
+    @POST("/lg/uncollect_originId/{id}/json")
+    suspend fun unCollectInsideArticle(
+        @Path("id") id:Int
+    ): Response<BaseResponse<Any>>
 }

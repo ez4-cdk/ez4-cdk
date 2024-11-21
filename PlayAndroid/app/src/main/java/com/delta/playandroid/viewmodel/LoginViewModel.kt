@@ -60,7 +60,7 @@ class LoginViewModel @Inject constructor(
                     is Result.Success -> {
                         val user = User(usnInput.value?:"",
                             null,
-                            password =  if (_rememberPassword){_password}else{""}
+                            password =  if (_rememberPassword||_autoLogin){_password}else{""}
                         )
                         runBlocking {
 

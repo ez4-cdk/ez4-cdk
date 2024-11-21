@@ -1,6 +1,7 @@
 package com.delta.playandroid.ui.fragment.collect
 
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -10,7 +11,9 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.delta.playandroid.R
+import com.delta.playandroid.WanAndroidApp
 import com.delta.playandroid.common.BaseFragment
+import com.delta.playandroid.data.model.bean.entity.Article
 import com.delta.playandroid.databinding.EditCollectArticleBinding
 import com.delta.playandroid.databinding.RvPageBinding
 import com.delta.playandroid.ui.activity.WebViewActivity
@@ -68,7 +71,11 @@ class CollectArticles(
 
         databinding.articleVM3 = collectViewModel
 
-        articleListAdapter = ArticleListAdapter(true,this)
+        articleListAdapter = ArticleListAdapter(
+            (requireActivity().application as WanAndroidApp).collectArticles.value?:ArrayList(),
+            true,
+            this
+        )
 
         databinding.rv.layoutManager = LinearLayoutManager(this.context)
 
@@ -94,12 +101,22 @@ class CollectArticles(
         startActivity(intentToWebView)
     }
 
-    override suspend fun onArticleCollect(id: Int): Boolean {
-        return collectViewModel.collect(id)
+    override suspend fun onArticleCollect(article: Article): Boolean {
+        return if(collectViewModel.collect(article.id)){
+            (requireActivity().application as WanAndroidApp).addCollectArticle(article)
+            true
+        }else{
+            false
+        }
     }
 
-    override suspend fun onArticleUnCollect(id: Int,originId:Int): Boolean {
-        return collectViewModel.uncollect(id,originId)
+    override suspend fun onArticleUnCollect(article: Article): Boolean {
+        return if(collectViewModel.uncollect(article.id,article.originId)){
+            (requireActivity().application as WanAndroidApp).removeCollectArticle(article)
+            true
+        }else{
+            false
+        }
     }
 
     override suspend fun editCollectArticle(

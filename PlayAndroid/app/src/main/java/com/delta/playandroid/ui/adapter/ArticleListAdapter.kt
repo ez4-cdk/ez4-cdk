@@ -1,5 +1,7 @@
 package com.delta.playandroid.ui.adapter
 
+import android.app.Activity
+import android.app.Application
 import android.content.Context
 import android.graphics.drawable.TransitionDrawable
 import android.provider.ContactsContract.Data
@@ -14,10 +16,12 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.delta.playandroid.R
+import com.delta.playandroid.WanAndroidApp
 import com.delta.playandroid.data.model.bean.entity.Article
 import com.delta.playandroid.databinding.ArticleItemBinding
 import com.delta.playandroid.databinding.EditCollectArticleBinding
 import com.delta.playandroid.databinding.FooterItemBinding
+import com.delta.playandroid.ui.activity.WebViewActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
@@ -26,7 +30,8 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class ArticleListAdapter(
-    private val isCollectPage: Boolean,
+    private val collectedArticles: ArrayList<Article>,
+    private val isCollectPage:Boolean,
     private val onClickListener: clickInterface,
 ) : PagingDataAdapter<Article, RecyclerView.ViewHolder>(COMPARATOR) {
 
@@ -52,21 +57,18 @@ class ArticleListAdapter(
 
     interface clickInterface {
         fun onArticleItemClick(url: String)
-        suspend fun onArticleCollect(id: Int): Boolean
+        suspend fun onArticleCollect(article: Article): Boolean
     }
 
     interface uncollectedClickListener : clickInterface {
-        suspend fun onArticleUnCollect(id: Int): Boolean
+        suspend fun onArticleUnCollect(article: Article): Boolean
     }
 
     interface collectedClickListener : clickInterface {
         fun onFooterClick()
 
 
-        suspend fun onArticleUnCollect(
-            id: Int,
-            originId: Int
-        ): Boolean
+        suspend fun onArticleUnCollect(article: Article): Boolean
 
         suspend fun editCollectArticle(
             id: Int,
@@ -188,7 +190,7 @@ class ArticleListAdapter(
 
     inner class ItemViewHolder(private val binding: ArticleItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        private var collect = isCollectPage
+        private var collect = false
         private lateinit var transitionDrawable: TransitionDrawable
 
         // 绑定文章数据
@@ -196,6 +198,8 @@ class ArticleListAdapter(
             binding.author.text = article.author
             binding.uploadTime.text = article.niceShareDate
             binding.title.text = article.title
+
+            collect = isCollect(article.id)
 
             // 文章网页
             binding.title.setOnClickListener {
@@ -211,7 +215,7 @@ class ArticleListAdapter(
             transitionDrawable = TransitionDrawable(drawableLayers)
             binding.collect.setImageDrawable(transitionDrawable)
 
-            if (isCollectPage) {
+            if (collect) {
                 transitionDrawable.startTransition(0)
             }
 
@@ -224,16 +228,22 @@ class ArticleListAdapter(
                     }
                     val result: Deferred<Boolean> = async {
                         if (onClickListener is collectedClickListener) {
+                            // 收藏页面--实现了收藏页面的接口
                             if (collect){
-                                return@async onClickListener.onArticleUnCollect(article.id, article.originId)
+                                // 收藏了就取消收藏
+                                return@async onClickListener.onArticleUnCollect(article)
                             }else{
-                                return@async onClickListener.onArticleCollect(article.originId)
+                                // 未收藏就收藏
+                                return@async onClickListener.onArticleCollect(article)
                             }
                         } else if (onClickListener is uncollectedClickListener) {
+                            // 未收藏页面--实现了未收藏页面的接口
                             if (!collect){
-                                return@async onClickListener.onArticleCollect(article.id)
+                                // 未收藏就收藏
+                                return@async onClickListener.onArticleCollect(article)
                             }else{
-                                return@async onClickListener.onArticleUnCollect(article.id)
+                                // 收藏了就取消收藏
+                                return@async onClickListener.onArticleUnCollect(article)
                             }
                         } else {
                             throw IllegalArgumentException("收藏失败，请重试.")
@@ -250,11 +260,22 @@ class ArticleListAdapter(
                             }
                             binding.collect.isClickable = true
                         }
-
                         collect = !collect
                     }
                 }
             }
         }
+    }
+
+    private fun isCollect(id: Int): Boolean {
+        if (isCollectPage){
+            return true
+        }
+        for (article in collectedArticles){
+            if (article.id == id || article.originId == id){
+                return true
+            }
+        }
+        return false
     }
 }

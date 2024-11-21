@@ -1,15 +1,12 @@
 package com.delta.playandroid.viewmodel
 
-import android.graphics.pdf.PdfDocument.Page
-import android.util.Log
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.LiveDataScope
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
-import androidx.paging.map
+import androidx.paging.cachedIn
 import com.delta.playandroid.common.BaseViewModel
 import com.delta.playandroid.data.model.bean.entity.Article
 import com.delta.playandroid.data.model.bean.entity.Hotkey
@@ -17,30 +14,27 @@ import com.delta.playandroid.data.model.repository.SearchRepo
 import com.delta.playandroid.data.source.SearchDataSource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.sync.Mutex
-import java.util.Queue
 import javax.inject.Inject
+import com.delta.playandroid.common.Result
 
 @HiltViewModel
-class SearchViewModel @Inject constructor(private val SearchRepo: SearchRepo) : BaseViewModel() {
+class SearchViewModel @Inject constructor(private val searchRepo: SearchRepo) : BaseViewModel() {
 
 
     /**
      * 搜索热词
      * hotkey
      */
-    val hotKey: LiveData<ArrayList<Hotkey>> get() = SearchRepo.hotkey
+    val hotKey: LiveData<ArrayList<Hotkey>> get() = searchRepo.hotkey
     fun loadHotKey() {
         viewModelScope.launch(Dispatchers.IO) {
-            SearchRepo.fetchHotKey()
+            searchRepo.fetchHotKey()
         }
     }
 
@@ -49,11 +43,11 @@ class SearchViewModel @Inject constructor(private val SearchRepo: SearchRepo) : 
      * 搜索历史
      * searchHistory
      */
-    val searchHistory: LiveData<ArrayList<String>> get() = SearchRepo.searchHistory
+    val searchHistory: LiveData<ArrayList<String>> get() = searchRepo.searchHistory
 
     fun loadSearchHistory() {
         viewModelScope.launch(Dispatchers.IO) {
-            SearchRepo.readSearchHistory()
+            searchRepo.readSearchHistory()
         }
     }
 
@@ -80,24 +74,25 @@ class SearchViewModel @Inject constructor(private val SearchRepo: SearchRepo) : 
      */
     fun cleanHistory() {
         viewModelScope.launch(Dispatchers.IO) {
-            SearchRepo.clearSearchHistory()
+            searchRepo.clearSearchHistory()
         }
     }
 
     suspend fun getSearchResultByPaging(key: String) {
-        viewModelScope.launch(Dispatchers.IO){
+        viewModelScope.launch(Dispatchers.IO) {
             Pager(
                 config = PagingConfig(
                     pageSize = 20,
                     enablePlaceholders = false
                 ),
                 pagingSourceFactory = {
-                    SearchDataSource(SearchRepo.apiService, key)
+                    SearchDataSource(searchRepo.apiService, key)
                 }
-            ).flow
+            ).flow.cachedIn(viewModelScope)
                 .collectLatest {
                     _searchResults.value = it
                 }
+
         }
     }
 
@@ -112,12 +107,12 @@ class SearchViewModel @Inject constructor(private val SearchRepo: SearchRepo) : 
 
                     if (!key.equals("")) {
                         runBlocking {
-                            SearchRepo.saveSearchHistory(key!!)
+                            searchRepo.saveSearchHistory(key!!)
                         }
-                        SearchRepo.saveSearchHistory()
+                        searchRepo.saveSearchHistory()
                     }
 
-                    SearchRepo.saveSearchHistory()
+                    searchRepo.saveSearchHistory()
 
                     getSearchResultByPaging(key ?: "")
 
@@ -127,6 +122,22 @@ class SearchViewModel @Inject constructor(private val SearchRepo: SearchRepo) : 
                     _mutex.unlock()
                 }
             }
+        }
+    }
+
+    suspend fun collect(id: Int): Boolean {
+        val result = searchRepo.collectArticle(id)
+        when (result) {
+            is Result.Success -> return true
+            is Result.Error -> return false
+        }
+    }
+
+    suspend fun uncollect(id: Int): Boolean {
+        val result = searchRepo.unCollectArticle(id)
+        when (result) {
+            is Result.Success -> return true
+            is Result.Error -> return false
         }
     }
 

@@ -79,7 +79,7 @@ class SearchActivity : AppCompatActivity(){
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 launch {
                     searchViewModel.searchResults.collectLatest {
-                        showResultFragment(it)
+                        showResultFragment(searchViewModel,it)
                     }
                 }
             }
@@ -102,9 +102,9 @@ class SearchActivity : AppCompatActivity(){
         })
     }
 
-    private fun showResultFragment(pagingData: PagingData<Article>) {
+    private fun showResultFragment(searchViewModel: SearchViewModel,pagingData: PagingData<Article>) {
         supportFragmentManager.beginTransaction()
-            .replace(R.id.search_container, SearchResult(pagingData))
+            .replace(R.id.search_container, SearchResult(searchViewModel,pagingData))
             .commit()
     }
 

@@ -8,20 +8,13 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.repeatOnLifecycle
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.delta.playandroid.R
 import com.delta.playandroid.databinding.CollectRootBinding
-import com.delta.playandroid.databinding.RvPageBinding
-import com.delta.playandroid.ui.adapter.ArticleListAdapter
 import com.delta.playandroid.ui.adapter.ViewpagerAdapter
 import com.delta.playandroid.ui.fragment.collect.CollectArticles
 import com.delta.playandroid.ui.fragment.collect.CollectWebs
 import com.delta.playandroid.viewmodel.CollectViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class CollectActivity:AppCompatActivity(){

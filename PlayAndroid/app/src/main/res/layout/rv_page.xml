@@ -11,7 +11,7 @@
             type="com.delta.playandroid.viewmodel.CollectViewModel" />
         <variable
             name="articleVM"
-            type="com.delta.playandroid.viewmodel.ArticlesInCardViewModel" />
+            type="com.delta.playandroid.viewmodel.TreeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

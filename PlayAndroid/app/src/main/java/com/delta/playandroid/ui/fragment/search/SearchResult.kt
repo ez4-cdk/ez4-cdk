@@ -13,15 +13,28 @@ import com.delta.playandroid.databinding.SearchResultRvBinding
 import com.delta.playandroid.ui.activity.LoginActivity
 import com.delta.playandroid.ui.activity.WebViewActivity
 import com.delta.playandroid.ui.adapter.ArticleListAdapter
+import com.delta.playandroid.viewmodel.SearchViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class SearchResult(
+    /**
+     * @Date 2024/11/20
+     * @Description: 修复了搜索结果不能收藏的BUG
+     */
+    private val searchViewModel: SearchViewModel,
     private val pagingData: PagingData<Article>
 ):BaseFragment<SearchResultRvBinding>(R.layout.search_result_rv,SearchResultRvBinding::bind),
     ArticleListAdapter.uncollectedClickListener {
-    private val resultAdapter:ArticleListAdapter = ArticleListAdapter(false,this)
+    private lateinit var resultAdapter:ArticleListAdapter
     override fun initView() {
+
+        resultAdapter = ArticleListAdapter(
+        (requireActivity().application as WanAndroidApp).collectArticles.value ?: ArrayList(),
+        false,
+        this
+        )
+
         databinding.lifecycleOwner = this
 
         databinding.searchResultRv.layoutManager = LinearLayoutManager(requireContext())
@@ -38,7 +51,11 @@ class SearchResult(
         startActivity(intentToWebView)
     }
 
-    override suspend fun onArticleCollect(id: Int): Boolean {
+    /**
+     * @Date 2024/11/20
+     * @Description 添加了收藏的逻辑
+     */
+    override suspend fun onArticleCollect(article: Article): Boolean {
         return if ((requireActivity().application as WanAndroidApp).user.value == null) {
             lifecycleScope.launch(Dispatchers.Main) {
                 Toast.makeText(requireContext(), "收藏失败，请登录.", Toast.LENGTH_SHORT).show()
@@ -48,11 +65,16 @@ class SearchResult(
             false
         } else {
             // collect
-            false
+            if(searchViewModel.collect(article.id)){
+                (requireActivity().application as WanAndroidApp).addCollectArticle(article)
+                return true
+            }else{
+                return false
+            }
         }
     }
 
-    override suspend fun onArticleUnCollect(id: Int): Boolean {
+    override suspend fun onArticleUnCollect(article: Article): Boolean {
         return if ((requireActivity().application as WanAndroidApp).user.value == null) {
             lifecycleScope.launch(Dispatchers.Main) {
                 Toast.makeText(requireContext(), "收藏失败，请登录.", Toast.LENGTH_SHORT).show()
@@ -62,7 +84,12 @@ class SearchResult(
             false
         } else {
             // uncollect
-            false
+            if(searchViewModel.uncollect(article.id)){
+                (requireActivity().application as WanAndroidApp).removeCollectArticle(article)
+                return true
+            }else{
+                return false
+            }
         }
     }
 }

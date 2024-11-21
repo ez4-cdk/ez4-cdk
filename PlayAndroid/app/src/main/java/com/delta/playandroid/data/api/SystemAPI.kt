@@ -5,6 +5,7 @@ import com.delta.playandroid.data.model.bean.entity.ArticlePack
 import com.delta.playandroid.data.model.bean.entity.Column
 import retrofit2.Response
 import retrofit2.http.GET
+import retrofit2.http.POST
 import retrofit2.http.Path
 import retrofit2.http.Query
 
@@ -32,4 +33,16 @@ interface SystemAPI {
         @Path("page") page:Int,
         @Query("author") author:String
     ):Response<BaseResponse<ArticlePack>>
+
+    // 收藏
+    @POST("/lg/collect/{id}/json")
+    suspend fun collectInsideArticle(
+        @Path("id") id:Int
+    ): Response<BaseResponse<Any>>
+
+    // 取消收藏
+    @POST("/lg/uncollect_originId/{id}/json")
+    suspend fun unCollectInsideArticle(
+        @Path("id") id:Int
+    ): Response<BaseResponse<Any>>
 }

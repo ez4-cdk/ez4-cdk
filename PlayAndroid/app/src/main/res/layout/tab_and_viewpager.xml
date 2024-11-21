@@ -5,7 +5,7 @@
     <data>
         <variable
             name="cardsItemViewModel"
-            type="com.delta.playandroid.viewmodel.ArticlesInCardViewModel" />
+            type="com.delta.playandroid.viewmodel.TreeViewModel" />
     </data>
 
     <LinearLayout

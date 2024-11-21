@@ -17,7 +17,6 @@ class Cards:BaseFragment<DirRvBinding>(R.layout.dir_rv,DirRvBinding::bind),
     private lateinit var cardsAdapter: CardsAdapter
     private val cardsViewModel:CardsViewModel by viewModels()
 
-    @SuppressLint("NotifyDataSetChanged")
     override fun initView() {
         cardsViewModel.fetchData()
         cardsAdapter = CardsAdapter(this)

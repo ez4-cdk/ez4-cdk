@@ -1,6 +1,7 @@
 package com.delta.playandroid.ui.activity
 
 import android.content.Intent
+import android.widget.Toast
 import com.delta.playandroid.R
 import com.delta.playandroid.WanAndroidApp
 import com.delta.playandroid.common.BaseActivity
@@ -49,6 +50,7 @@ class LoginActivity : BaseActivity() {
 
     fun onLoginSuccess(user: User?){
         (application as WanAndroidApp).setUser(user)
+        Toast.makeText(this,"登录成功，跳转中...",Toast.LENGTH_SHORT).show()
         val intent = Intent(this,HomeActivity::class.java)
         startActivity(intent)
         finish()

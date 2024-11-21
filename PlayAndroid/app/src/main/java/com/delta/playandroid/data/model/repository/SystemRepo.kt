@@ -75,4 +75,33 @@ class SystemRepo @Inject constructor(
         ).flow
     }
 
+    /**
+     * @Date 2024/11/20
+     * @Description 添加了收藏和取消收藏
+     */
+    suspend fun collectArticle(id:Int):Result<Unit>{
+        return try {
+            val response = apiService.collectInsideArticle(id)
+            if (response.isSuccessful){
+                Result.Success(Unit)
+            }else{
+                Result.Error(Exception("Error in fetching cards data"))
+            }
+        }catch (exception:Exception){
+            Result.Error(exception)
+        }
+    }
+
+    suspend fun unCollectArticle(id:Int):Result<Unit>{
+        return try {
+            val response = apiService.unCollectInsideArticle(id)
+            if (response.isSuccessful){
+                Result.Success(Unit)
+            }else{
+                Result.Error(Exception("Error in fetching cards data"))
+            }
+        }catch (exception:Exception){
+            Result.Error(exception)
+        }
+    }
 }

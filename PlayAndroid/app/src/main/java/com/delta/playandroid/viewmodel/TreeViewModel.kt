@@ -1,21 +1,16 @@
 package com.delta.playandroid.viewmodel
 
-import androidx.fragment.app.Fragment
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
-import androidx.paging.cachedIn
 import com.delta.playandroid.common.BaseViewModel
 import com.delta.playandroid.data.model.bean.entity.Article
 import com.delta.playandroid.data.model.repository.SystemRepo
 import dagger.hilt.android.lifecycle.HiltViewModel
+import com.delta.playandroid.common.Result
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
 @HiltViewModel
-class ArticlesInCardViewModel @Inject constructor(private val systemRepo: SystemRepo) :BaseViewModel() {
+class TreeViewModel @Inject constructor(private val systemRepo: SystemRepo) :BaseViewModel() {
     private var _cid: Int = -1
 
     lateinit var articles:Flow<PagingData<Article>>
@@ -26,4 +21,21 @@ class ArticlesInCardViewModel @Inject constructor(private val systemRepo: System
         _cid = cid
         fetchData()
     }
+
+    suspend fun collect(id:Int):Boolean{
+        val result = systemRepo.collectArticle(id)
+        when(result){
+            is Result.Success -> return true
+            is Result.Error -> return false
+        }
+    }
+
+    suspend fun uncollect(id:Int):Boolean{
+        val result = systemRepo.unCollectArticle(id)
+        when(result){
+            is Result.Success -> return true
+            is Result.Error -> return false
+        }
+    }
+
 }

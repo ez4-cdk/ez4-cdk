@@ -11,7 +11,7 @@ import com.delta.playandroid.common.BaseFragment
 import com.delta.playandroid.databinding.RvPageBinding
 import com.delta.playandroid.ui.activity.WebViewActivity
 import com.delta.playandroid.ui.adapter.ProjectListAdapter
-import com.delta.playandroid.viewmodel.ArticlesInCardViewModel
+import com.delta.playandroid.viewmodel.TreeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -21,7 +21,7 @@ class RvInProjectPage(
     private val cid: Int
 ): BaseFragment<RvPageBinding>(R.layout.rv_page, RvPageBinding::bind)
     , ProjectListAdapter.onProjectItemClickListener{
-    private val rvViewModel: ArticlesInCardViewModel by viewModels()
+    private val rvViewModel: TreeViewModel by viewModels()
 
     private lateinit var rvAdapter: ProjectListAdapter
     override fun initView() {

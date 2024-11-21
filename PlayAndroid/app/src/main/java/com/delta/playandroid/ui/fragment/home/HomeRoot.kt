@@ -1,5 +1,6 @@
 package com.delta.playandroid.ui.fragment.home
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Handler
 import android.os.Looper
@@ -13,6 +14,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.delta.playandroid.R
 import com.delta.playandroid.WanAndroidApp
 import com.delta.playandroid.common.BaseFragment
+import com.delta.playandroid.data.model.bean.entity.Article
 import com.delta.playandroid.databinding.BannerAndRvBinding
 import com.delta.playandroid.ui.activity.LoginActivity
 import com.delta.playandroid.ui.activity.WebViewActivity
@@ -62,9 +64,11 @@ class HomeRoot :BaseFragment<BannerAndRvBinding>(R.layout.banner_and_rv,BannerAn
         handler.removeCallbacks(runnable)
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onResume() {
         super.onResume()
         requireActivity().title = "首页"
+        articleListAdapter.notifyDataSetChanged()
     }
 
     override fun onStart() {
@@ -85,7 +89,11 @@ class HomeRoot :BaseFragment<BannerAndRvBinding>(R.layout.banner_and_rv,BannerAn
 
     //轮播图下的recyclerView
     private fun initHeadArticleRecyclerView() {
-        articleListAdapter = ArticleListAdapter(false,this)
+        articleListAdapter = ArticleListAdapter(
+            (requireActivity().application as WanAndroidApp).collectArticles.value?:ArrayList(),
+            false,
+            this
+        )
         databinding.headPageRv.adapter = articleListAdapter
         databinding.headPageRv.layoutManager = LinearLayoutManager(requireContext())
         articleViewModel.setUser((requireActivity().application as WanAndroidApp).user.value)
@@ -144,7 +152,7 @@ class HomeRoot :BaseFragment<BannerAndRvBinding>(R.layout.banner_and_rv,BannerAn
         startActivity(intentToWebView)
     }
 
-    override suspend fun onArticleCollect(id:Int):Boolean{
+    override suspend fun onArticleCollect(article: Article):Boolean{
         return if((requireActivity().application as WanAndroidApp).user.value == null){
             lifecycleScope.launch(Dispatchers.Main){
                 Toast.makeText(requireContext(),"收藏失败，请登录.",Toast.LENGTH_SHORT).show()
@@ -153,11 +161,16 @@ class HomeRoot :BaseFragment<BannerAndRvBinding>(R.layout.banner_and_rv,BannerAn
             }
             false
         }else{
-            articleViewModel.collect(id)
+            if(articleViewModel.collect(article.id)){
+                (requireActivity().application as WanAndroidApp).addCollectArticle(article)
+                true
+            }else{
+                false
+            }
         }
     }
 
-    override suspend fun onArticleUnCollect(id: Int): Boolean {
+    override suspend fun onArticleUnCollect(article: Article): Boolean {
         return if((requireActivity().application as WanAndroidApp).user.value == null){
             lifecycleScope.launch(Dispatchers.Main){
                 Toast.makeText(requireContext(),"收藏失败，请登录.",Toast.LENGTH_SHORT).show()
@@ -167,7 +180,12 @@ class HomeRoot :BaseFragment<BannerAndRvBinding>(R.layout.banner_and_rv,BannerAn
             }
             false
         }else{
-            articleViewModel.uncollect(id)
+            if(articleViewModel.uncollect(article.id)){
+                (requireActivity().application as WanAndroidApp).removeCollectArticle(article)
+                true
+            }else{
+                false
+            }
         }
     }
 }

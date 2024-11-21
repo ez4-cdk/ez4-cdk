@@ -19,6 +19,10 @@ class SystemRoot: Fragment(R.layout.dir_container){
     override fun onResume() {
         super.onResume()
         requireActivity().title = "知识树"
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.tree_page_container, Cards())
+            .addToBackStack(null)
+            .commit()
     }
 }
 

@@ -44,7 +44,6 @@ class CollectRepo @Inject constructor(
     suspend fun collectInsideArticle(id:Int):Result<Unit>{
         return try {
             val response = apiService.collectInsideArticle(id)
-            Log.d("CollectRepo",response.body().toString())
             if (response.isSuccessful&&response.body()!=null){
                 Result.Success(Unit)
             }else{
@@ -83,7 +82,6 @@ class CollectRepo @Inject constructor(
                 Result.Error(Exception(response.errorBody()?.string()))
             }
         }catch (exception:Exception){
-            Log.d("CollectRepo",exception.message.toString())
             Result.Error(exception)
         }
     }
@@ -104,7 +102,6 @@ class CollectRepo @Inject constructor(
                 Result.Error(Exception(response.errorBody()?.string()))
             }
         }catch (exception:Exception){
-            Log.d("CollectRepo",exception.message.toString())
             Result.Error(exception)
         }
     }
@@ -118,11 +115,9 @@ class CollectRepo @Inject constructor(
             if (response.isSuccessful&&response.body()!=null){
                 Result.Success(Unit)
             }else{
-                Log.d("CollectRepo",response.errorBody()?.string().toString())
                 Result.Error(Exception(response.errorBody()?.string()))
             }
         }catch (exception:Exception){
-            Log.d("CollectRepo",exception.message.toString())
             Result.Error(exception)
         }
     }
@@ -164,7 +159,6 @@ class CollectRepo @Inject constructor(
      */
     suspend fun deleteCollectWebsite(id: Int):Result<Unit>{
         return try {
-            Log.d("CollectRepo","delete id:$id")
             val response = apiService.deleteCollectWebsite(id)
             if (response.isSuccessful&&response.body()!=null){
                 Result.Success(Unit)

@@ -52,26 +52,9 @@ class CardsAdapter(private val listener: onDirClickListener):RecyclerView.Adapte
         )
     }
 
-    override fun onViewAttachedToWindow(holder: TreePageDirAdapterViewHolder) {
-        super.onViewAttachedToWindow(holder)
-        holder.itemView.postDelayed({
-            holder.itemView.animate()
-                .scaleY(1f)
-                .scaleX(1f)
-                .setDuration(200)
-                .setInterpolator(AccelerateInterpolator())
-                .start()
-        },50L)
-    }
-
     override fun onBindViewHolder(holder: CardsAdapter.TreePageDirAdapterViewHolder, position: Int) {
         for(i in 0 until cardInfoList.get(position).children.size){
             val cardTextview = TextView(holder.itemView.context)
-
-            // 设置初始透明度和缩放
-            cardTextview.alpha = 0f
-            cardTextview.scaleX = 0.5f
-            cardTextview.scaleY = 0.5f
 
             //字体效果
             cardTextview.text = cardInfoList.get(position).children.get(i).name
@@ -87,29 +70,15 @@ class CardsAdapter(private val listener: onDirClickListener):RecyclerView.Adapte
             //布局属性参数
             cardTextview.layoutParams = textviewParams
 
-            //动画效果
-            cardTextview.postDelayed({
-                cardTextview.animate()
-                    .alpha(1f)
-                    .scaleX(1f)
-                    .scaleY(1f)
-                    .setDuration(200)
-                    .setInterpolator(AccelerateInterpolator())
-                    .start()
-            }, (i * 50).toLong())
-
             //点击事件
             cardTextview.setOnClickListener{
                 listener.onDirClick(cardInfoList.get(position).id,cardInfoList.get(position).children.get(i).id)
             }
-
             //添加到容器
             holder.container.addView(cardTextview)
         }
         holder.title.text = cardInfoList.get(position).name
 
-        holder.itemView.scaleX = 0.5f
-        holder.itemView.scaleY = 0.5f
     }
 
     override fun getItemCount(): Int = cardInfoList.size

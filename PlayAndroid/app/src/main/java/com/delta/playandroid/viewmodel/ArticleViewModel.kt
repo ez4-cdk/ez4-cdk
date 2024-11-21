@@ -20,7 +20,11 @@ class ArticleViewModel @Inject constructor(
     private val homeRepo: HomeRepo,
     private val collectRepo: CollectRepo
 ):BaseViewModel(){
-    val articles:Flow<PagingData<Article>> = homeRepo.getArticles()
+    var articles:Flow<PagingData<Article>> = homeRepo.getArticles()
+
+    fun resetFlow(){
+        articles = homeRepo.getArticles()
+    }
 
     private var _exceptionMSG = MutableLiveData<String>()
     val exceptionMSG: LiveData<String> get() = _exceptionMSG
@@ -46,11 +50,5 @@ class ArticleViewModel @Inject constructor(
             return false
         }
         return true
-    }
-
-    fun refreshCollectedArticle(){
-        viewModelScope.launch {
-
-        }
     }
 }

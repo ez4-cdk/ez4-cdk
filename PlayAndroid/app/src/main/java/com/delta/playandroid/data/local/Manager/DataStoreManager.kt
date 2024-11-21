@@ -6,6 +6,9 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import com.delta.playandroid.data.model.bean.entity.Article
 import kotlinx.coroutines.flow.first
 
 val Context.datastore: DataStore<Preferences> by preferencesDataStore(name = "app_preferences")
@@ -23,6 +26,7 @@ class DataStoreManager private constructor(context: Context) {
             }
         }
     }
+
 
     suspend fun saveToDataStore(key: String, value: String){
         val dataStoreKey = stringPreferencesKey(key)
