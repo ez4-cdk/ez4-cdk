@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="defaultBackgroundColor">#33DCDCDC</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="transparent">#00000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="all_books_tag">全部书本</string>
+    <string name="app_name">DeepRead</string>
+    <string name="book">阅读</string>
+    <string name="book_name_tag">书名 : </string>
+    <string name="bookface_desc">bookface</string>
+    <string name="bookstore">书架</string>
+    <string name="footer">没有更多了，点击可添加</string>
+    <string name="loading">加载中...</string>
+    <string name="music">音乐</string>
+    <string name="music_list_tag">我的歌单列表</string>
+    <string name="music_opt_last">上一首</string>
+    <string name="music_opt_list">列表</string>
+    <string name="music_opt_next">下一首</string>
+    <string name="music_opt_stop">暂停</string>
+    <string name="music_play_mode_list_loop">列表循环</string>
+    <string name="music_play_mode_sequence">顺序播放</string>
+    <string name="music_play_mode_shuffle">随机播放</string>
+    <string name="music_play_mode_single_loop">单曲循环</string>
+    <string name="music_song_detail">歌曲详情</string>
+    <string name="music_song_name">歌曲名称</string>
+    <string name="read_hint">还没有加载小说，选一本吧~</string>
+    <string name="read_last_chapter_tag">上次阅读 :</string>
+    <string name="read_progress_tag">阅读进度 :</string>
+    <string name="upload_time_tag">上传时间 :</string>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        
+        <item name="android:windowBackground">@color/defaultBackgroundColor</item>
+    </style>
+    <style name="Theme.DeepRead" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        
+        <item name="android:windowBackground">@color/defaultBackgroundColor</item>
+    </style>
+</resources>

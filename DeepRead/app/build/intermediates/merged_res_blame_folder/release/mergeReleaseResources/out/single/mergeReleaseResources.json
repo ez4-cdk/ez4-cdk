@@ -1,0 +1,206 @@
+[
+    {
+        "merged": "com.delta.deepread.app-release-4:/xml_backup_rules.xml.flat",
+        "source": "com.delta.deepread.app-main-5:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/drawable_music_opt_list.png.flat",
+        "source": "com.delta.deepread.app-main-5:/drawable/music_opt_list.png"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/xml_data_extraction_rules.xml.flat",
+        "source": "com.delta.deepread.app-main-5:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.delta.deepread.app-main-5:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.delta.deepread.app-main-5:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/layout_center.xml.flat",
+        "source": "com.delta.deepread.app-main-5:/layout/center.xml"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/drawable_music_bg.png.flat",
+        "source": "com.delta.deepread.app-main-5:/drawable/music_bg.png"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/layout_song_footer.xml.flat",
+        "source": "com.delta.deepread.app-main-5:/layout/song_footer.xml"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.delta.deepread.app-main-5:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/layout_floating_ball.xml.flat",
+        "source": "com.delta.deepread.app-main-5:/layout/floating_ball.xml"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/drawable_search_sample.xml.flat",
+        "source": "com.delta.deepread.app-main-5:/drawable/search_sample.xml"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/layout_book.xml.flat",
+        "source": "com.delta.deepread.app-main-5:/layout/book.xml"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/drawable_center_bnv.xml.flat",
+        "source": "com.delta.deepread.app-main-5:/drawable/center_bnv.xml"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.delta.deepread.app-main-5:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/drawable_music_opt_next.png.flat",
+        "source": "com.delta.deepread.app-main-5:/drawable/music_opt_next.png"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/drawable_music_opt_stop.png.flat",
+        "source": "com.delta.deepread.app-main-5:/drawable/music_opt_stop.png"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/drawable_mode_sequence.png.flat",
+        "source": "com.delta.deepread.app-main-5:/drawable/mode_sequence.png"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.delta.deepread.app-main-5:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/menu_music_opts.xml.flat",
+        "source": "com.delta.deepread.app-main-5:/menu/music_opts.xml"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.delta.deepread.app-main-5:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.delta.deepread.app-main-5:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/drawable_music_play.png.flat",
+        "source": "com.delta.deepread.app-main-5:/drawable/music_play.png"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/drawable_music_opt_last.png.flat",
+        "source": "com.delta.deepread.app-main-5:/drawable/music_opt_last.png"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/drawable_music.png.flat",
+        "source": "com.delta.deepread.app-main-5:/drawable/music.png"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/drawable_floating_button_img.png.flat",
+        "source": "com.delta.deepread.app-main-5:/drawable/floating_button_img.png"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/drawable_book.png.flat",
+        "source": "com.delta.deepread.app-main-5:/drawable/book.png"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.delta.deepread.app-main-5:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/layout_song.xml.flat",
+        "source": "com.delta.deepread.app-main-5:/layout/song.xml"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/layout_splash.xml.flat",
+        "source": "com.delta.deepread.app-main-5:/layout/splash.xml"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.delta.deepread.app-main-5:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/drawable_mode_list_loop.png.flat",
+        "source": "com.delta.deepread.app-main-5:/drawable/mode_list_loop.png"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/layout_novel_footer.xml.flat",
+        "source": "com.delta.deepread.app-main-5:/layout/novel_footer.xml"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/drawable_mode_single_loop.png.flat",
+        "source": "com.delta.deepread.app-main-5:/drawable/mode_single_loop.png"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/drawable_mode_shuffle.png.flat",
+        "source": "com.delta.deepread.app-main-5:/drawable/mode_shuffle.png"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/layout_read.xml.flat",
+        "source": "com.delta.deepread.app-main-5:/layout/read.xml"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.delta.deepread.app-main-5:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/menu_center_navigation.xml.flat",
+        "source": "com.delta.deepread.app-main-5:/menu/center_navigation.xml"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/mipmap-anydpi_ic_launcher.xml.flat",
+        "source": "com.delta.deepread.app-main-5:/mipmap-anydpi/ic_launcher.xml"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/mipmap-anydpi_ic_launcher_round.xml.flat",
+        "source": "com.delta.deepread.app-main-5:/mipmap-anydpi/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/layout_music.xml.flat",
+        "source": "com.delta.deepread.app-main-5:/layout/music.xml"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/drawable_border.xml.flat",
+        "source": "com.delta.deepread.app-main-5:/drawable/border.xml"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/drawable_music_opt_run.png.flat",
+        "source": "com.delta.deepread.app-main-5:/drawable/music_opt_run.png"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/drawable_bookshelf_bg.png.flat",
+        "source": "com.delta.deepread.app-main-5:/drawable/bookshelf_bg.png"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.delta.deepread.app-main-5:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/drawable_desktop_icon.png.flat",
+        "source": "com.delta.deepread.app-main-5:/drawable/desktop_icon.png"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/layout_bookstore.xml.flat",
+        "source": "com.delta.deepread.app-main-5:/layout/bookstore.xml"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/drawable_anchor.png.flat",
+        "source": "com.delta.deepread.app-main-5:/drawable/anchor.png"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/drawable_default_txt.png.flat",
+        "source": "com.delta.deepread.app-main-5:/drawable/default_txt.png"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.delta.deepread.app-main-5:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/drawable_bookstore.png.flat",
+        "source": "com.delta.deepread.app-main-5:/drawable/bookstore.png"
+    },
+    {
+        "merged": "com.delta.deepread.app-release-4:/drawable_book_face_unload.png.flat",
+        "source": "com.delta.deepread.app-main-5:/drawable/book_face_unload.png"
+    }
+]
