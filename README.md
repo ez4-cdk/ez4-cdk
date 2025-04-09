@@ -1,4 +1,7 @@
-#自我介绍
-我是广东工业大学计算机学院计算机科学与技术22级2班的学生，来自广东省云浮市罗定县，肉桂的家乡，肠粉的发源地。
-兴趣爱好是研究代码的业务模块，比如怎么去实现一个抽奖系统，怎么去设计一个扫码点餐的程序等等，每完成一个业务模块，成就感跃然码上，虽然学得很慢。
-有关本人的学习经历（更类似于技术栈）：自学了Android应用开发（大一）、javaweb的前后端基础知识（大二），项目做得不太好便不作展示
+#simply introduction
+The app is used to enjoy reading while listening to music.<br/>
+Text comes from ur txt file in ur storage while music comes from ur mp3 file in ur storage,too.<br/>
+Perhaps,someone else wondered that why not get it by using two pre-existing and advanced apps.<br/>
+ehhhhhhhhhhhhhhh......<br/>
+U have a great point. <br/>
+..(QWQ)......
