@@ -54,9 +54,6 @@ android {
 
 dependencies {
 
-    debugImplementation(libs.com.squareup.leakcanary.leakcanary.android)
-    releaseImplementation(libs.leakcanary.android.no.op)
-
     implementation(libs.retrofit)
     implementation(libs.okhttp)
     implementation(libs.gson.converter)

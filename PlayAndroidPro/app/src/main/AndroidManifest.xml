@@ -46,12 +46,6 @@
             android:exported="false"
             android:launchMode="singleTop"/>
 
-        <activity-alias
-            android:name="leakcanary.internal.activity.LeakLauncherActivity"
-            android:targetActivity=".login.LoginActivity"
-            android:exported="true"
-            tools:replace="android:targetActivity" />
-
     </application>
 
 </manifest>
