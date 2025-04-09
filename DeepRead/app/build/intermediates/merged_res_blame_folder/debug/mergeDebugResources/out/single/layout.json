@@ -1,46 +1,42 @@
 [
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-mergeDebugResources-3:\\layout\\read.xml",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\layout\\read.xml"
-    },
-    {
         "merged": "com.delta.deepread.app-mergeDebugResources-3:/layout/splash.xml",
         "source": "com.delta.deepread.app-main-6:/layout/splash.xml"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-mergeDebugResources-3:\\layout\\song.xml",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\layout\\song.xml"
+        "merged": "com.delta.deepread.app-mergeDebugResources-3:/layout/bookstore.xml",
+        "source": "com.delta.deepread.app-main-6:/layout/bookstore.xml"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-mergeDebugResources-3:\\layout\\floating_ball.xml",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\layout\\floating_ball.xml"
+        "merged": "com.delta.deepread.app-mergeDebugResources-3:/layout/floating_ball.xml",
+        "source": "com.delta.deepread.app-main-6:/layout/floating_ball.xml"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-mergeDebugResources-3:\\layout\\splash.xml",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\layout\\splash.xml"
+        "merged": "com.delta.deepread.app-mergeDebugResources-3:/layout/novel_footer.xml",
+        "source": "com.delta.deepread.app-main-6:/layout/novel_footer.xml"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-mergeDebugResources-3:\\layout\\music.xml",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\layout\\music.xml"
+        "merged": "com.delta.deepread.app-mergeDebugResources-3:/layout/read.xml",
+        "source": "com.delta.deepread.app-main-6:/layout/read.xml"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-mergeDebugResources-3:\\layout\\bookstore.xml",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\layout\\bookstore.xml"
+        "merged": "com.delta.deepread.app-mergeDebugResources-3:/layout/song.xml",
+        "source": "com.delta.deepread.app-main-6:/layout/song.xml"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-mergeDebugResources-3:\\layout\\song_footer.xml",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\layout\\song_footer.xml"
+        "merged": "com.delta.deepread.app-mergeDebugResources-3:/layout/music.xml",
+        "source": "com.delta.deepread.app-main-6:/layout/music.xml"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-mergeDebugResources-3:\\layout\\novel_footer.xml",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\layout\\novel_footer.xml"
+        "merged": "com.delta.deepread.app-mergeDebugResources-3:/layout/song_footer.xml",
+        "source": "com.delta.deepread.app-main-6:/layout/song_footer.xml"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-mergeDebugResources-3:\\layout\\center.xml",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\layout\\center.xml"
+        "merged": "com.delta.deepread.app-mergeDebugResources-3:/layout/center.xml",
+        "source": "com.delta.deepread.app-main-6:/layout/center.xml"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-mergeDebugResources-3:\\layout\\book.xml",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\layout\\book.xml"
+        "merged": "com.delta.deepread.app-mergeDebugResources-3:/layout/book.xml",
+        "source": "com.delta.deepread.app-main-6:/layout/book.xml"
     }
 ]

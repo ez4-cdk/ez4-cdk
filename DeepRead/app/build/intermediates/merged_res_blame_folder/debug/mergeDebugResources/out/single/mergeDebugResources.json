@@ -1,214 +1,206 @@
 [
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\layout_splash.xml.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\layout\\splash.xml"
+        "merged": "com.delta.deepread.app-debug-4:/layout_book.xml.flat",
+        "source": "com.delta.deepread.app-main-6:/layout/book.xml"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\drawable_music_opt_stop.png.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\drawable\\music_opt_stop.png"
+        "merged": "com.delta.deepread.app-debug-4:/drawable_music_opt_run.png.flat",
+        "source": "com.delta.deepread.app-main-6:/drawable/music_opt_run.png"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\drawable_music.png.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\drawable\\music.png"
+        "merged": "com.delta.deepread.app-debug-4:/menu_center_navigation.xml.flat",
+        "source": "com.delta.deepread.app-main-6:/menu/center_navigation.xml"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\menu_center_navigation.xml.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\menu\\center_navigation.xml"
+        "merged": "com.delta.deepread.app-debug-4:/layout_splash.xml.flat",
+        "source": "com.delta.deepread.app-main-6:/layout/splash.xml"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\layout_floating_ball.xml.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\layout\\floating_ball.xml"
+        "merged": "com.delta.deepread.app-debug-4:/drawable_mode_list_loop.png.flat",
+        "source": "com.delta.deepread.app-main-6:/drawable/mode_list_loop.png"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\drawable_music_opt_run.png.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\drawable\\music_opt_run.png"
+        "merged": "com.delta.deepread.app-debug-4:/drawable_desktop_icon.png.flat",
+        "source": "com.delta.deepread.app-main-6:/drawable/desktop_icon.png"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\drawable_mode_sequence.png.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\drawable\\mode_sequence.png"
+        "merged": "com.delta.deepread.app-debug-4:/drawable_mode_sequence.png.flat",
+        "source": "com.delta.deepread.app-main-6:/drawable/mode_sequence.png"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\layout_bookstore.xml.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\layout\\bookstore.xml"
+        "merged": "com.delta.deepread.app-debug-4:/mipmap-anydpi_ic_launcher_round.xml.flat",
+        "source": "com.delta.deepread.app-main-6:/mipmap-anydpi/ic_launcher_round.xml"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\mipmap-hdpi\\ic_launcher.webp"
+        "merged": "com.delta.deepread.app-debug-4:/drawable_music.png.flat",
+        "source": "com.delta.deepread.app-main-6:/drawable/music.png"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\mipmap-xxxhdpi\\ic_launcher.webp"
+        "merged": "com.delta.deepread.app-debug-4:/drawable_music_play.png.flat",
+        "source": "com.delta.deepread.app-main-6:/drawable/music_play.png"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\drawable_search_sample.xml.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\drawable\\search_sample.xml"
+        "merged": "com.delta.deepread.app-debug-4:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.delta.deepread.app-main-6:/mipmap-xhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\drawable_music_opt_last.png.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\drawable\\music_opt_last.png"
+        "merged": "com.delta.deepread.app-debug-4:/layout_bookstore.xml.flat",
+        "source": "com.delta.deepread.app-main-6:/layout/bookstore.xml"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\mipmap-hdpi\\ic_launcher_round.webp"
+        "merged": "com.delta.deepread.app-debug-4:/drawable_mode_single_loop.png.flat",
+        "source": "com.delta.deepread.app-main-6:/drawable/mode_single_loop.png"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+        "merged": "com.delta.deepread.app-debug-4:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.delta.deepread.app-main-6:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\drawable_bookshelf_bg.png.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\drawable\\bookshelf_bg.png"
+        "merged": "com.delta.deepread.app-debug-4:/drawable_bookstore.png.flat",
+        "source": "com.delta.deepread.app-main-6:/drawable/bookstore.png"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\drawable_floating_button_img.png.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\drawable\\floating_button_img.png"
+        "merged": "com.delta.deepread.app-debug-4:/xml_backup_rules.xml.flat",
+        "source": "com.delta.deepread.app-main-6:/xml/backup_rules.xml"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\drawable_music_opt_list.png.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\drawable\\music_opt_list.png"
+        "merged": "com.delta.deepread.app-debug-4:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.delta.deepread.app-main-6:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\drawable_border.xml.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\drawable\\border.xml"
+        "merged": "com.delta.deepread.app-debug-4:/drawable_music_opt_stop.png.flat",
+        "source": "com.delta.deepread.app-main-6:/drawable/music_opt_stop.png"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\drawable_desktop_icon.png.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\drawable\\desktop_icon.png"
-    },
-    {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\layout_book.xml.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\layout\\book.xml"
-    },
-    {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\drawable_mode_single_loop.png.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\drawable\\mode_single_loop.png"
-    },
-    {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\mipmap-anydpi_ic_launcher.xml.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\mipmap-anydpi\\ic_launcher.xml"
-    },
-    {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\drawable_ic_launcher_foreground.xml.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\drawable\\ic_launcher_foreground.xml"
-    },
-    {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\drawable_center_bnv.xml.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\drawable\\center_bnv.xml"
+        "merged": "com.delta.deepread.app-debug-4:/drawable_music_opt_next.png.flat",
+        "source": "com.delta.deepread.app-main-6:/drawable/music_opt_next.png"
     },
     {
         "merged": "com.delta.deepread.app-debug-4:/mipmap-anydpi_ic_launcher.xml.flat",
         "source": "com.delta.deepread.app-main-6:/mipmap-anydpi/ic_launcher.xml"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\mipmap-xxhdpi\\ic_launcher.webp"
+        "merged": "com.delta.deepread.app-debug-4:/drawable_border.xml.flat",
+        "source": "com.delta.deepread.app-main-6:/drawable/border.xml"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\mipmap-anydpi_ic_launcher_round.xml.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\mipmap-anydpi\\ic_launcher_round.xml"
+        "merged": "com.delta.deepread.app-debug-4:/drawable_music_opt_list.png.flat",
+        "source": "com.delta.deepread.app-main-6:/drawable/music_opt_list.png"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\layout_song.xml.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\layout\\song.xml"
+        "merged": "com.delta.deepread.app-debug-4:/layout_song.xml.flat",
+        "source": "com.delta.deepread.app-main-6:/layout/song.xml"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+        "merged": "com.delta.deepread.app-debug-4:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.delta.deepread.app-main-6:/mipmap-xhdpi/ic_launcher.webp"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\drawable_splash_bg.png.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\drawable\\splash_bg.png"
+        "merged": "com.delta.deepread.app-debug-4:/drawable_anchor.png.flat",
+        "source": "com.delta.deepread.app-main-6:/drawable/anchor.png"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\drawable_mode_list_loop.png.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\drawable\\mode_list_loop.png"
+        "merged": "com.delta.deepread.app-debug-4:/drawable_bookshelf_bg.png.flat",
+        "source": "com.delta.deepread.app-main-6:/drawable/bookshelf_bg.png"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\menu_music_opts.xml.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\menu\\music_opts.xml"
+        "merged": "com.delta.deepread.app-debug-4:/drawable_music_opt_last.png.flat",
+        "source": "com.delta.deepread.app-main-6:/drawable/music_opt_last.png"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\mipmap-xhdpi\\ic_launcher.webp"
+        "merged": "com.delta.deepread.app-debug-4:/drawable_floating_button_img.png.flat",
+        "source": "com.delta.deepread.app-main-6:/drawable/floating_button_img.png"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\layout_music.xml.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\layout\\music.xml"
+        "merged": "com.delta.deepread.app-debug-4:/layout_floating_ball.xml.flat",
+        "source": "com.delta.deepread.app-main-6:/layout/floating_ball.xml"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\layout_center.xml.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\layout\\center.xml"
+        "merged": "com.delta.deepread.app-debug-4:/layout_novel_footer.xml.flat",
+        "source": "com.delta.deepread.app-main-6:/layout/novel_footer.xml"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\layout_song_footer.xml.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\layout\\song_footer.xml"
+        "merged": "com.delta.deepread.app-debug-4:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.delta.deepread.app-main-6:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\drawable_mode_shuffle.png.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\drawable\\mode_shuffle.png"
+        "merged": "com.delta.deepread.app-debug-4:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.delta.deepread.app-main-6:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\drawable_book.png.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\drawable\\book.png"
+        "merged": "com.delta.deepread.app-debug-4:/layout_center.xml.flat",
+        "source": "com.delta.deepread.app-main-6:/layout/center.xml"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\drawable_anchor.png.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\drawable\\anchor.png"
+        "merged": "com.delta.deepread.app-debug-4:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.delta.deepread.app-main-6:/mipmap-xxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\drawable_music_bg.png.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\drawable\\music_bg.png"
+        "merged": "com.delta.deepread.app-debug-4:/layout_music.xml.flat",
+        "source": "com.delta.deepread.app-main-6:/layout/music.xml"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\drawable_default_txt.png.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\drawable\\default_txt.png"
+        "merged": "com.delta.deepread.app-debug-4:/drawable_center_bnv.xml.flat",
+        "source": "com.delta.deepread.app-main-6:/drawable/center_bnv.xml"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\drawable_book_face_unload.png.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\drawable\\book_face_unload.png"
+        "merged": "com.delta.deepread.app-debug-4:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.delta.deepread.app-main-6:/mipmap-mdpi/ic_launcher.webp"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\mipmap-mdpi\\ic_launcher.webp"
+        "merged": "com.delta.deepread.app-debug-4:/drawable_book.png.flat",
+        "source": "com.delta.deepread.app-main-6:/drawable/book.png"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\xml_backup_rules.xml.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\xml\\backup_rules.xml"
+        "merged": "com.delta.deepread.app-debug-4:/drawable_search_sample.xml.flat",
+        "source": "com.delta.deepread.app-main-6:/drawable/search_sample.xml"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\xml_data_extraction_rules.xml.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\xml\\data_extraction_rules.xml"
+        "merged": "com.delta.deepread.app-debug-4:/drawable_book_face_unload.png.flat",
+        "source": "com.delta.deepread.app-main-6:/drawable/book_face_unload.png"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\layout_read.xml.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\layout\\read.xml"
+        "merged": "com.delta.deepread.app-debug-4:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.delta.deepread.app-main-6:/drawable/ic_launcher_foreground.xml"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\drawable_bookstore.png.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\drawable\\bookstore.png"
+        "merged": "com.delta.deepread.app-debug-4:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.delta.deepread.app-main-6:/mipmap-hdpi/ic_launcher.webp"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\drawable_music_play.png.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\drawable\\music_play.png"
+        "merged": "com.delta.deepread.app-debug-4:/layout_song_footer.xml.flat",
+        "source": "com.delta.deepread.app-main-6:/layout/song_footer.xml"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\mipmap-mdpi\\ic_launcher_round.webp"
+        "merged": "com.delta.deepread.app-debug-4:/drawable_music_bg.png.flat",
+        "source": "com.delta.deepread.app-main-6:/drawable/music_bg.png"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\layout_novel_footer.xml.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\layout\\novel_footer.xml"
+        "merged": "com.delta.deepread.app-debug-4:/xml_data_extraction_rules.xml.flat",
+        "source": "com.delta.deepread.app-main-6:/xml/data_extraction_rules.xml"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\drawable_music_opt_next.png.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\drawable\\music_opt_next.png"
+        "merged": "com.delta.deepread.app-debug-4:/drawable_default_txt.png.flat",
+        "source": "com.delta.deepread.app-main-6:/drawable/default_txt.png"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\mipmap-xhdpi\\ic_launcher_round.webp"
+        "merged": "com.delta.deepread.app-debug-4:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.delta.deepread.app-main-6:/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-debug-4:\\drawable_ic_launcher_background.xml.flat",
-        "source": "D:\\Android_project\\gradle home\\daemon\\8.7\\com.delta.deepread.app-main-6:\\drawable\\ic_launcher_background.xml"
+        "merged": "com.delta.deepread.app-debug-4:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.delta.deepread.app-main-6:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.delta.deepread.app-debug-4:/drawable_mode_shuffle.png.flat",
+        "source": "com.delta.deepread.app-main-6:/drawable/mode_shuffle.png"
+    },
+    {
+        "merged": "com.delta.deepread.app-debug-4:/layout_read.xml.flat",
+        "source": "com.delta.deepread.app-main-6:/layout/read.xml"
+    },
+    {
+        "merged": "com.delta.deepread.app-debug-4:/menu_music_opts.xml.flat",
+        "source": "com.delta.deepread.app-main-6:/menu/music_opts.xml"
     }
 ]
