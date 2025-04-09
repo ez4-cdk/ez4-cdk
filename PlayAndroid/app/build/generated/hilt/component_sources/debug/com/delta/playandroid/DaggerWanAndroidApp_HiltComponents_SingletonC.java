@@ -1,0 +1,822 @@
+package com.delta.playandroid;
+
+import android.app.Activity;
+import android.app.Service;
+import android.view.View;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.SavedStateHandle;
+import androidx.lifecycle.ViewModel;
+import com.delta.playandroid.data.api.ApiClient;
+import com.delta.playandroid.data.interceptor.AddCookieInterceptor;
+import com.delta.playandroid.data.interceptor.GetCookieInterceptor;
+import com.delta.playandroid.data.local.Manager.DataStoreManager;
+import com.delta.playandroid.data.model.repository.CollectRepo;
+import com.delta.playandroid.data.model.repository.HomeRepo;
+import com.delta.playandroid.data.model.repository.LoginRepo;
+import com.delta.playandroid.data.model.repository.ProjectRepo;
+import com.delta.playandroid.data.model.repository.SearchRepo;
+import com.delta.playandroid.data.model.repository.SystemRepo;
+import com.delta.playandroid.di.ApiClientModule;
+import com.delta.playandroid.di.ApiClientModule_ProvideAddCookieInterceptorFactory;
+import com.delta.playandroid.di.ApiClientModule_ProvideApiClientFactory;
+import com.delta.playandroid.di.ApiClientModule_ProvideGetCookieInterceptorFactory;
+import com.delta.playandroid.di.DataStoreModule;
+import com.delta.playandroid.di.DataStoreModule_ProvideDataStoreManagerFactory;
+import com.delta.playandroid.di.RepositoryModule;
+import com.delta.playandroid.di.RepositoryModule_ProvideHomeRepoFactory;
+import com.delta.playandroid.di.RepositoryModule_ProvideLoginRepoFactory;
+import com.delta.playandroid.di.RepositoryModule_ProvideProjectRepoFactory;
+import com.delta.playandroid.di.RepositoryModule_ProvideSearchRepoFactory;
+import com.delta.playandroid.di.RepositoryModule_ProvideSelfInfoRepoFactory;
+import com.delta.playandroid.di.RepositoryModule_ProvideTreeRepoFactory;
+import com.delta.playandroid.ui.activity.CollectActivity;
+import com.delta.playandroid.ui.activity.HomeActivity;
+import com.delta.playandroid.ui.activity.LoginActivity;
+import com.delta.playandroid.ui.activity.SearchActivity;
+import com.delta.playandroid.ui.fragment.home.HomeRoot;
+import com.delta.playandroid.ui.fragment.login.FastLogIn;
+import com.delta.playandroid.ui.fragment.login.LogIn;
+import com.delta.playandroid.ui.fragment.login.SignUp;
+import com.delta.playandroid.ui.fragment.project.ProjectRoot;
+import com.delta.playandroid.ui.fragment.project.RvInProjectPage;
+import com.delta.playandroid.ui.fragment.system.Cards;
+import com.delta.playandroid.ui.fragment.system.PageInCards;
+import com.delta.playandroid.ui.fragment.system.RvInPage;
+import com.delta.playandroid.ui.fragment.system.SystemRoot;
+import com.delta.playandroid.viewmodel.ArticleViewModel;
+import com.delta.playandroid.viewmodel.ArticleViewModel_HiltModules_KeyModule_ProvideFactory;
+import com.delta.playandroid.viewmodel.BannerViewModel;
+import com.delta.playandroid.viewmodel.BannerViewModel_HiltModules_KeyModule_ProvideFactory;
+import com.delta.playandroid.viewmodel.CardsViewModel;
+import com.delta.playandroid.viewmodel.CardsViewModel_HiltModules_KeyModule_ProvideFactory;
+import com.delta.playandroid.viewmodel.CollectViewModel;
+import com.delta.playandroid.viewmodel.CollectViewModel_HiltModules_KeyModule_ProvideFactory;
+import com.delta.playandroid.viewmodel.FastLoginViewModel;
+import com.delta.playandroid.viewmodel.FastLoginViewModel_HiltModules_KeyModule_ProvideFactory;
+import com.delta.playandroid.viewmodel.LoginViewModel;
+import com.delta.playandroid.viewmodel.LoginViewModel_HiltModules_KeyModule_ProvideFactory;
+import com.delta.playandroid.viewmodel.ProjectViewModel;
+import com.delta.playandroid.viewmodel.ProjectViewModel_HiltModules_KeyModule_ProvideFactory;
+import com.delta.playandroid.viewmodel.SearchViewModel;
+import com.delta.playandroid.viewmodel.SearchViewModel_HiltModules_KeyModule_ProvideFactory;
+import com.delta.playandroid.viewmodel.SignUpViewModel;
+import com.delta.playandroid.viewmodel.SignUpViewModel_HiltModules_KeyModule_ProvideFactory;
+import com.delta.playandroid.viewmodel.TabViewpagerViewModel;
+import com.delta.playandroid.viewmodel.TabViewpagerViewModel_HiltModules_KeyModule_ProvideFactory;
+import com.delta.playandroid.viewmodel.TreeViewModel;
+import com.delta.playandroid.viewmodel.TreeViewModel_HiltModules_KeyModule_ProvideFactory;
+import dagger.hilt.android.ActivityRetainedLifecycle;
+import dagger.hilt.android.ViewModelLifecycle;
+import dagger.hilt.android.flags.HiltWrapper_FragmentGetContextFix_FragmentGetContextFixModule;
+import dagger.hilt.android.internal.builders.ActivityComponentBuilder;
+import dagger.hilt.android.internal.builders.ActivityRetainedComponentBuilder;
+import dagger.hilt.android.internal.builders.FragmentComponentBuilder;
+import dagger.hilt.android.internal.builders.ServiceComponentBuilder;
+import dagger.hilt.android.internal.builders.ViewComponentBuilder;
+import dagger.hilt.android.internal.builders.ViewModelComponentBuilder;
+import dagger.hilt.android.internal.builders.ViewWithFragmentComponentBuilder;
+import dagger.hilt.android.internal.lifecycle.DefaultViewModelFactories;
+import dagger.hilt.android.internal.lifecycle.DefaultViewModelFactories_InternalFactoryFactory_Factory;
+import dagger.hilt.android.internal.managers.ActivityRetainedComponentManager_LifecycleModule_ProvideActivityRetainedLifecycleFactory;
+import dagger.hilt.android.internal.modules.ApplicationContextModule;
+import dagger.hilt.android.internal.modules.ApplicationContextModule_ProvideContextFactory;
+import dagger.internal.DaggerGenerated;
+import dagger.internal.DoubleCheck;
+import dagger.internal.MapBuilder;
+import dagger.internal.Preconditions;
+import dagger.internal.SetBuilder;
+import java.util.Collections;
+import java.util.Map;
+import java.util.Set;
+import javax.annotation.processing.Generated;
+import javax.inject.Provider;
+
+@DaggerGenerated
+@Generated(
+    value = "dagger.internal.codegen.ComponentProcessor",
+    comments = "https://dagger.dev"
+)
+@SuppressWarnings({
+    "unchecked",
+    "rawtypes"
+})
+public final class DaggerWanAndroidApp_HiltComponents_SingletonC {
+  private DaggerWanAndroidApp_HiltComponents_SingletonC() {
+  }
+
+  public static Builder builder() {
+    return new Builder();
+  }
+
+  public static final class Builder {
+    private ApplicationContextModule applicationContextModule;
+
+    private Builder() {
+    }
+
+    /**
+     * @deprecated This module is declared, but an instance is not used in the component. This method is a no-op. For more, see https://dagger.dev/unused-modules.
+     */
+    @Deprecated
+    public Builder apiClientModule(ApiClientModule apiClientModule) {
+      Preconditions.checkNotNull(apiClientModule);
+      return this;
+    }
+
+    public Builder applicationContextModule(ApplicationContextModule applicationContextModule) {
+      this.applicationContextModule = Preconditions.checkNotNull(applicationContextModule);
+      return this;
+    }
+
+    /**
+     * @deprecated This module is declared, but an instance is not used in the component. This method is a no-op. For more, see https://dagger.dev/unused-modules.
+     */
+    @Deprecated
+    public Builder dataStoreModule(DataStoreModule dataStoreModule) {
+      Preconditions.checkNotNull(dataStoreModule);
+      return this;
+    }
+
+    /**
+     * @deprecated This module is declared, but an instance is not used in the component. This method is a no-op. For more, see https://dagger.dev/unused-modules.
+     */
+    @Deprecated
+    public Builder hiltWrapper_FragmentGetContextFix_FragmentGetContextFixModule(
+        HiltWrapper_FragmentGetContextFix_FragmentGetContextFixModule hiltWrapper_FragmentGetContextFix_FragmentGetContextFixModule) {
+      Preconditions.checkNotNull(hiltWrapper_FragmentGetContextFix_FragmentGetContextFixModule);
+      return this;
+    }
+
+    /**
+     * @deprecated This module is declared, but an instance is not used in the component. This method is a no-op. For more, see https://dagger.dev/unused-modules.
+     */
+    @Deprecated
+    public Builder repositoryModule(RepositoryModule repositoryModule) {
+      Preconditions.checkNotNull(repositoryModule);
+      return this;
+    }
+
+    public WanAndroidApp_HiltComponents.SingletonC build() {
+      Preconditions.checkBuilderRequirement(applicationContextModule, ApplicationContextModule.class);
+      return new SingletonCImpl(applicationContextModule);
+    }
+  }
+
+  private static final class ActivityRetainedCBuilder implements WanAndroidApp_HiltComponents.ActivityRetainedC.Builder {
+    private final SingletonCImpl singletonCImpl;
+
+    private ActivityRetainedCBuilder(SingletonCImpl singletonCImpl) {
+      this.singletonCImpl = singletonCImpl;
+    }
+
+    @Override
+    public WanAndroidApp_HiltComponents.ActivityRetainedC build() {
+      return new ActivityRetainedCImpl(singletonCImpl);
+    }
+  }
+
+  private static final class ActivityCBuilder implements WanAndroidApp_HiltComponents.ActivityC.Builder {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl;
+
+    private Activity activity;
+
+    private ActivityCBuilder(SingletonCImpl singletonCImpl,
+        ActivityRetainedCImpl activityRetainedCImpl) {
+      this.singletonCImpl = singletonCImpl;
+      this.activityRetainedCImpl = activityRetainedCImpl;
+    }
+
+    @Override
+    public ActivityCBuilder activity(Activity activity) {
+      this.activity = Preconditions.checkNotNull(activity);
+      return this;
+    }
+
+    @Override
+    public WanAndroidApp_HiltComponents.ActivityC build() {
+      Preconditions.checkBuilderRequirement(activity, Activity.class);
+      return new ActivityCImpl(singletonCImpl, activityRetainedCImpl, activity);
+    }
+  }
+
+  private static final class FragmentCBuilder implements WanAndroidApp_HiltComponents.FragmentC.Builder {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl;
+
+    private final ActivityCImpl activityCImpl;
+
+    private Fragment fragment;
+
+    private FragmentCBuilder(SingletonCImpl singletonCImpl,
+        ActivityRetainedCImpl activityRetainedCImpl, ActivityCImpl activityCImpl) {
+      this.singletonCImpl = singletonCImpl;
+      this.activityRetainedCImpl = activityRetainedCImpl;
+      this.activityCImpl = activityCImpl;
+    }
+
+    @Override
+    public FragmentCBuilder fragment(Fragment fragment) {
+      this.fragment = Preconditions.checkNotNull(fragment);
+      return this;
+    }
+
+    @Override
+    public WanAndroidApp_HiltComponents.FragmentC build() {
+      Preconditions.checkBuilderRequirement(fragment, Fragment.class);
+      return new FragmentCImpl(singletonCImpl, activityRetainedCImpl, activityCImpl, fragment);
+    }
+  }
+
+  private static final class ViewWithFragmentCBuilder implements WanAndroidApp_HiltComponents.ViewWithFragmentC.Builder {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl;
+
+    private final ActivityCImpl activityCImpl;
+
+    private final FragmentCImpl fragmentCImpl;
+
+    private View view;
+
+    private ViewWithFragmentCBuilder(SingletonCImpl singletonCImpl,
+        ActivityRetainedCImpl activityRetainedCImpl, ActivityCImpl activityCImpl,
+        FragmentCImpl fragmentCImpl) {
+      this.singletonCImpl = singletonCImpl;
+      this.activityRetainedCImpl = activityRetainedCImpl;
+      this.activityCImpl = activityCImpl;
+      this.fragmentCImpl = fragmentCImpl;
+    }
+
+    @Override
+    public ViewWithFragmentCBuilder view(View view) {
+      this.view = Preconditions.checkNotNull(view);
+      return this;
+    }
+
+    @Override
+    public WanAndroidApp_HiltComponents.ViewWithFragmentC build() {
+      Preconditions.checkBuilderRequirement(view, View.class);
+      return new ViewWithFragmentCImpl(singletonCImpl, activityRetainedCImpl, activityCImpl, fragmentCImpl, view);
+    }
+  }
+
+  private static final class ViewCBuilder implements WanAndroidApp_HiltComponents.ViewC.Builder {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl;
+
+    private final ActivityCImpl activityCImpl;
+
+    private View view;
+
+    private ViewCBuilder(SingletonCImpl singletonCImpl, ActivityRetainedCImpl activityRetainedCImpl,
+        ActivityCImpl activityCImpl) {
+      this.singletonCImpl = singletonCImpl;
+      this.activityRetainedCImpl = activityRetainedCImpl;
+      this.activityCImpl = activityCImpl;
+    }
+
+    @Override
+    public ViewCBuilder view(View view) {
+      this.view = Preconditions.checkNotNull(view);
+      return this;
+    }
+
+    @Override
+    public WanAndroidApp_HiltComponents.ViewC build() {
+      Preconditions.checkBuilderRequirement(view, View.class);
+      return new ViewCImpl(singletonCImpl, activityRetainedCImpl, activityCImpl, view);
+    }
+  }
+
+  private static final class ViewModelCBuilder implements WanAndroidApp_HiltComponents.ViewModelC.Builder {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl;
+
+    private SavedStateHandle savedStateHandle;
+
+    private ViewModelLifecycle viewModelLifecycle;
+
+    private ViewModelCBuilder(SingletonCImpl singletonCImpl,
+        ActivityRetainedCImpl activityRetainedCImpl) {
+      this.singletonCImpl = singletonCImpl;
+      this.activityRetainedCImpl = activityRetainedCImpl;
+    }
+
+    @Override
+    public ViewModelCBuilder savedStateHandle(SavedStateHandle handle) {
+      this.savedStateHandle = Preconditions.checkNotNull(handle);
+      return this;
+    }
+
+    @Override
+    public ViewModelCBuilder viewModelLifecycle(ViewModelLifecycle viewModelLifecycle) {
+      this.viewModelLifecycle = Preconditions.checkNotNull(viewModelLifecycle);
+      return this;
+    }
+
+    @Override
+    public WanAndroidApp_HiltComponents.ViewModelC build() {
+      Preconditions.checkBuilderRequirement(savedStateHandle, SavedStateHandle.class);
+      Preconditions.checkBuilderRequirement(viewModelLifecycle, ViewModelLifecycle.class);
+      return new ViewModelCImpl(singletonCImpl, activityRetainedCImpl, savedStateHandle, viewModelLifecycle);
+    }
+  }
+
+  private static final class ServiceCBuilder implements WanAndroidApp_HiltComponents.ServiceC.Builder {
+    private final SingletonCImpl singletonCImpl;
+
+    private Service service;
+
+    private ServiceCBuilder(SingletonCImpl singletonCImpl) {
+      this.singletonCImpl = singletonCImpl;
+    }
+
+    @Override
+    public ServiceCBuilder service(Service service) {
+      this.service = Preconditions.checkNotNull(service);
+      return this;
+    }
+
+    @Override
+    public WanAndroidApp_HiltComponents.ServiceC build() {
+      Preconditions.checkBuilderRequirement(service, Service.class);
+      return new ServiceCImpl(singletonCImpl, service);
+    }
+  }
+
+  private static final class ViewWithFragmentCImpl extends WanAndroidApp_HiltComponents.ViewWithFragmentC {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl;
+
+    private final ActivityCImpl activityCImpl;
+
+    private final FragmentCImpl fragmentCImpl;
+
+    private final ViewWithFragmentCImpl viewWithFragmentCImpl = this;
+
+    private ViewWithFragmentCImpl(SingletonCImpl singletonCImpl,
+        ActivityRetainedCImpl activityRetainedCImpl, ActivityCImpl activityCImpl,
+        FragmentCImpl fragmentCImpl, View viewParam) {
+      this.singletonCImpl = singletonCImpl;
+      this.activityRetainedCImpl = activityRetainedCImpl;
+      this.activityCImpl = activityCImpl;
+      this.fragmentCImpl = fragmentCImpl;
+
+
+    }
+  }
+
+  private static final class FragmentCImpl extends WanAndroidApp_HiltComponents.FragmentC {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl;
+
+    private final ActivityCImpl activityCImpl;
+
+    private final FragmentCImpl fragmentCImpl = this;
+
+    private FragmentCImpl(SingletonCImpl singletonCImpl,
+        ActivityRetainedCImpl activityRetainedCImpl, ActivityCImpl activityCImpl,
+        Fragment fragmentParam) {
+      this.singletonCImpl = singletonCImpl;
+      this.activityRetainedCImpl = activityRetainedCImpl;
+      this.activityCImpl = activityCImpl;
+
+
+    }
+
+    @Override
+    public void injectHomeRoot(HomeRoot arg0) {
+    }
+
+    @Override
+    public void injectFastLogIn(FastLogIn arg0) {
+    }
+
+    @Override
+    public void injectLogIn(LogIn arg0) {
+    }
+
+    @Override
+    public void injectSignUp(SignUp arg0) {
+    }
+
+    @Override
+    public void injectProjectRoot(ProjectRoot arg0) {
+    }
+
+    @Override
+    public void injectRvInProjectPage(RvInProjectPage arg0) {
+    }
+
+    @Override
+    public void injectCards(Cards arg0) {
+    }
+
+    @Override
+    public void injectPageInCards(PageInCards arg0) {
+    }
+
+    @Override
+    public void injectRvInPage(RvInPage arg0) {
+    }
+
+    @Override
+    public void injectSystemRoot(SystemRoot arg0) {
+    }
+
+    @Override
+    public DefaultViewModelFactories.InternalFactoryFactory getHiltInternalFactoryFactory() {
+      return activityCImpl.getHiltInternalFactoryFactory();
+    }
+
+    @Override
+    public ViewWithFragmentComponentBuilder viewWithFragmentComponentBuilder() {
+      return new ViewWithFragmentCBuilder(singletonCImpl, activityRetainedCImpl, activityCImpl, fragmentCImpl);
+    }
+  }
+
+  private static final class ViewCImpl extends WanAndroidApp_HiltComponents.ViewC {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl;
+
+    private final ActivityCImpl activityCImpl;
+
+    private final ViewCImpl viewCImpl = this;
+
+    private ViewCImpl(SingletonCImpl singletonCImpl, ActivityRetainedCImpl activityRetainedCImpl,
+        ActivityCImpl activityCImpl, View viewParam) {
+      this.singletonCImpl = singletonCImpl;
+      this.activityRetainedCImpl = activityRetainedCImpl;
+      this.activityCImpl = activityCImpl;
+
+
+    }
+  }
+
+  private static final class ActivityCImpl extends WanAndroidApp_HiltComponents.ActivityC {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl;
+
+    private final ActivityCImpl activityCImpl = this;
+
+    private ActivityCImpl(SingletonCImpl singletonCImpl,
+        ActivityRetainedCImpl activityRetainedCImpl, Activity activityParam) {
+      this.singletonCImpl = singletonCImpl;
+      this.activityRetainedCImpl = activityRetainedCImpl;
+
+
+    }
+
+    @Override
+    public void injectCollectActivity(CollectActivity arg0) {
+    }
+
+    @Override
+    public void injectHomeActivity(HomeActivity arg0) {
+    }
+
+    @Override
+    public void injectLoginActivity(LoginActivity arg0) {
+    }
+
+    @Override
+    public void injectSearchActivity(SearchActivity arg0) {
+    }
+
+    @Override
+    public DefaultViewModelFactories.InternalFactoryFactory getHiltInternalFactoryFactory() {
+      return DefaultViewModelFactories_InternalFactoryFactory_Factory.newInstance(getViewModelKeys(), new ViewModelCBuilder(singletonCImpl, activityRetainedCImpl));
+    }
+
+    @Override
+    public Set<String> getViewModelKeys() {
+      return SetBuilder.<String>newSetBuilder(11).add(ArticleViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(BannerViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(CardsViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(CollectViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(FastLoginViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(LoginViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(ProjectViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(SearchViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(SignUpViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(TabViewpagerViewModel_HiltModules_KeyModule_ProvideFactory.provide()).add(TreeViewModel_HiltModules_KeyModule_ProvideFactory.provide()).build();
+    }
+
+    @Override
+    public ViewModelComponentBuilder getViewModelComponentBuilder() {
+      return new ViewModelCBuilder(singletonCImpl, activityRetainedCImpl);
+    }
+
+    @Override
+    public FragmentComponentBuilder fragmentComponentBuilder() {
+      return new FragmentCBuilder(singletonCImpl, activityRetainedCImpl, activityCImpl);
+    }
+
+    @Override
+    public ViewComponentBuilder viewComponentBuilder() {
+      return new ViewCBuilder(singletonCImpl, activityRetainedCImpl, activityCImpl);
+    }
+  }
+
+  private static final class ViewModelCImpl extends WanAndroidApp_HiltComponents.ViewModelC {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl;
+
+    private final ViewModelCImpl viewModelCImpl = this;
+
+    private Provider<ArticleViewModel> articleViewModelProvider;
+
+    private Provider<BannerViewModel> bannerViewModelProvider;
+
+    private Provider<CardsViewModel> cardsViewModelProvider;
+
+    private Provider<CollectViewModel> collectViewModelProvider;
+
+    private Provider<FastLoginViewModel> fastLoginViewModelProvider;
+
+    private Provider<LoginViewModel> loginViewModelProvider;
+
+    private Provider<ProjectViewModel> projectViewModelProvider;
+
+    private Provider<SearchViewModel> searchViewModelProvider;
+
+    private Provider<SignUpViewModel> signUpViewModelProvider;
+
+    private Provider<TabViewpagerViewModel> tabViewpagerViewModelProvider;
+
+    private Provider<TreeViewModel> treeViewModelProvider;
+
+    private ViewModelCImpl(SingletonCImpl singletonCImpl,
+        ActivityRetainedCImpl activityRetainedCImpl, SavedStateHandle savedStateHandleParam,
+        ViewModelLifecycle viewModelLifecycleParam) {
+      this.singletonCImpl = singletonCImpl;
+      this.activityRetainedCImpl = activityRetainedCImpl;
+
+      initialize(savedStateHandleParam, viewModelLifecycleParam);
+
+    }
+
+    @SuppressWarnings("unchecked")
+    private void initialize(final SavedStateHandle savedStateHandleParam,
+        final ViewModelLifecycle viewModelLifecycleParam) {
+      this.articleViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 0);
+      this.bannerViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 1);
+      this.cardsViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 2);
+      this.collectViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 3);
+      this.fastLoginViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 4);
+      this.loginViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 5);
+      this.projectViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 6);
+      this.searchViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 7);
+      this.signUpViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 8);
+      this.tabViewpagerViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 9);
+      this.treeViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 10);
+    }
+
+    @Override
+    public Map<String, Provider<ViewModel>> getHiltViewModelMap() {
+      return MapBuilder.<String, Provider<ViewModel>>newMapBuilder(11).put("com.delta.playandroid.viewmodel.ArticleViewModel", ((Provider) articleViewModelProvider)).put("com.delta.playandroid.viewmodel.BannerViewModel", ((Provider) bannerViewModelProvider)).put("com.delta.playandroid.viewmodel.CardsViewModel", ((Provider) cardsViewModelProvider)).put("com.delta.playandroid.viewmodel.CollectViewModel", ((Provider) collectViewModelProvider)).put("com.delta.playandroid.viewmodel.FastLoginViewModel", ((Provider) fastLoginViewModelProvider)).put("com.delta.playandroid.viewmodel.LoginViewModel", ((Provider) loginViewModelProvider)).put("com.delta.playandroid.viewmodel.ProjectViewModel", ((Provider) projectViewModelProvider)).put("com.delta.playandroid.viewmodel.SearchViewModel", ((Provider) searchViewModelProvider)).put("com.delta.playandroid.viewmodel.SignUpViewModel", ((Provider) signUpViewModelProvider)).put("com.delta.playandroid.viewmodel.TabViewpagerViewModel", ((Provider) tabViewpagerViewModelProvider)).put("com.delta.playandroid.viewmodel.TreeViewModel", ((Provider) treeViewModelProvider)).build();
+    }
+
+    private static final class SwitchingProvider<T> implements Provider<T> {
+      private final SingletonCImpl singletonCImpl;
+
+      private final ActivityRetainedCImpl activityRetainedCImpl;
+
+      private final ViewModelCImpl viewModelCImpl;
+
+      private final int id;
+
+      SwitchingProvider(SingletonCImpl singletonCImpl, ActivityRetainedCImpl activityRetainedCImpl,
+          ViewModelCImpl viewModelCImpl, int id) {
+        this.singletonCImpl = singletonCImpl;
+        this.activityRetainedCImpl = activityRetainedCImpl;
+        this.viewModelCImpl = viewModelCImpl;
+        this.id = id;
+      }
+
+      @SuppressWarnings("unchecked")
+      @Override
+      public T get() {
+        switch (id) {
+          case 0: // com.delta.playandroid.viewmodel.ArticleViewModel 
+          return (T) new ArticleViewModel(singletonCImpl.provideHomeRepoProvider.get(), singletonCImpl.provideSelfInfoRepoProvider.get());
+
+          case 1: // com.delta.playandroid.viewmodel.BannerViewModel 
+          return (T) new BannerViewModel(singletonCImpl.provideHomeRepoProvider.get());
+
+          case 2: // com.delta.playandroid.viewmodel.CardsViewModel 
+          return (T) new CardsViewModel(singletonCImpl.provideTreeRepoProvider.get());
+
+          case 3: // com.delta.playandroid.viewmodel.CollectViewModel 
+          return (T) new CollectViewModel(singletonCImpl.provideSelfInfoRepoProvider.get());
+
+          case 4: // com.delta.playandroid.viewmodel.FastLoginViewModel 
+          return (T) new FastLoginViewModel(singletonCImpl.provideLoginRepoProvider.get());
+
+          case 5: // com.delta.playandroid.viewmodel.LoginViewModel 
+          return (T) new LoginViewModel(singletonCImpl.provideLoginRepoProvider.get());
+
+          case 6: // com.delta.playandroid.viewmodel.ProjectViewModel 
+          return (T) new ProjectViewModel(singletonCImpl.provideProjectRepoProvider.get());
+
+          case 7: // com.delta.playandroid.viewmodel.SearchViewModel 
+          return (T) new SearchViewModel(singletonCImpl.provideSearchRepoProvider.get());
+
+          case 8: // com.delta.playandroid.viewmodel.SignUpViewModel 
+          return (T) new SignUpViewModel(singletonCImpl.provideLoginRepoProvider.get());
+
+          case 9: // com.delta.playandroid.viewmodel.TabViewpagerViewModel 
+          return (T) new TabViewpagerViewModel(singletonCImpl.provideTreeRepoProvider.get());
+
+          case 10: // com.delta.playandroid.viewmodel.TreeViewModel 
+          return (T) new TreeViewModel(singletonCImpl.provideTreeRepoProvider.get());
+
+          default: throw new AssertionError(id);
+        }
+      }
+    }
+  }
+
+  private static final class ActivityRetainedCImpl extends WanAndroidApp_HiltComponents.ActivityRetainedC {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl = this;
+
+    private Provider<ActivityRetainedLifecycle> provideActivityRetainedLifecycleProvider;
+
+    private ActivityRetainedCImpl(SingletonCImpl singletonCImpl) {
+      this.singletonCImpl = singletonCImpl;
+
+      initialize();
+
+    }
+
+    @SuppressWarnings("unchecked")
+    private void initialize() {
+      this.provideActivityRetainedLifecycleProvider = DoubleCheck.provider(new SwitchingProvider<ActivityRetainedLifecycle>(singletonCImpl, activityRetainedCImpl, 0));
+    }
+
+    @Override
+    public ActivityComponentBuilder activityComponentBuilder() {
+      return new ActivityCBuilder(singletonCImpl, activityRetainedCImpl);
+    }
+
+    @Override
+    public ActivityRetainedLifecycle getActivityRetainedLifecycle() {
+      return provideActivityRetainedLifecycleProvider.get();
+    }
+
+    private static final class SwitchingProvider<T> implements Provider<T> {
+      private final SingletonCImpl singletonCImpl;
+
+      private final ActivityRetainedCImpl activityRetainedCImpl;
+
+      private final int id;
+
+      SwitchingProvider(SingletonCImpl singletonCImpl, ActivityRetainedCImpl activityRetainedCImpl,
+          int id) {
+        this.singletonCImpl = singletonCImpl;
+        this.activityRetainedCImpl = activityRetainedCImpl;
+        this.id = id;
+      }
+
+      @SuppressWarnings("unchecked")
+      @Override
+      public T get() {
+        switch (id) {
+          case 0: // dagger.hilt.android.ActivityRetainedLifecycle 
+          return (T) ActivityRetainedComponentManager_LifecycleModule_ProvideActivityRetainedLifecycleFactory.provideActivityRetainedLifecycle();
+
+          default: throw new AssertionError(id);
+        }
+      }
+    }
+  }
+
+  private static final class ServiceCImpl extends WanAndroidApp_HiltComponents.ServiceC {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ServiceCImpl serviceCImpl = this;
+
+    private ServiceCImpl(SingletonCImpl singletonCImpl, Service serviceParam) {
+      this.singletonCImpl = singletonCImpl;
+
+
+    }
+  }
+
+  private static final class SingletonCImpl extends WanAndroidApp_HiltComponents.SingletonC {
+    private final ApplicationContextModule applicationContextModule;
+
+    private final SingletonCImpl singletonCImpl = this;
+
+    private Provider<DataStoreManager> provideDataStoreManagerProvider;
+
+    private Provider<AddCookieInterceptor> provideAddCookieInterceptorProvider;
+
+    private Provider<GetCookieInterceptor> provideGetCookieInterceptorProvider;
+
+    private Provider<ApiClient> provideApiClientProvider;
+
+    private Provider<HomeRepo> provideHomeRepoProvider;
+
+    private Provider<CollectRepo> provideSelfInfoRepoProvider;
+
+    private Provider<SystemRepo> provideTreeRepoProvider;
+
+    private Provider<LoginRepo> provideLoginRepoProvider;
+
+    private Provider<ProjectRepo> provideProjectRepoProvider;
+
+    private Provider<SearchRepo> provideSearchRepoProvider;
+
+    private SingletonCImpl(ApplicationContextModule applicationContextModuleParam) {
+      this.applicationContextModule = applicationContextModuleParam;
+      initialize(applicationContextModuleParam);
+
+    }
+
+    @SuppressWarnings("unchecked")
+    private void initialize(final ApplicationContextModule applicationContextModuleParam) {
+      this.provideDataStoreManagerProvider = DoubleCheck.provider(new SwitchingProvider<DataStoreManager>(singletonCImpl, 3));
+      this.provideAddCookieInterceptorProvider = DoubleCheck.provider(new SwitchingProvider<AddCookieInterceptor>(singletonCImpl, 2));
+      this.provideGetCookieInterceptorProvider = DoubleCheck.provider(new SwitchingProvider<GetCookieInterceptor>(singletonCImpl, 4));
+      this.provideApiClientProvider = DoubleCheck.provider(new SwitchingProvider<ApiClient>(singletonCImpl, 1));
+      this.provideHomeRepoProvider = DoubleCheck.provider(new SwitchingProvider<HomeRepo>(singletonCImpl, 0));
+      this.provideSelfInfoRepoProvider = DoubleCheck.provider(new SwitchingProvider<CollectRepo>(singletonCImpl, 5));
+      this.provideTreeRepoProvider = DoubleCheck.provider(new SwitchingProvider<SystemRepo>(singletonCImpl, 6));
+      this.provideLoginRepoProvider = DoubleCheck.provider(new SwitchingProvider<LoginRepo>(singletonCImpl, 7));
+      this.provideProjectRepoProvider = DoubleCheck.provider(new SwitchingProvider<ProjectRepo>(singletonCImpl, 8));
+      this.provideSearchRepoProvider = DoubleCheck.provider(new SwitchingProvider<SearchRepo>(singletonCImpl, 9));
+    }
+
+    @Override
+    public void injectWanAndroidApp(WanAndroidApp wanAndroidApp) {
+    }
+
+    @Override
+    public Set<Boolean> getDisableFragmentGetContextFix() {
+      return Collections.<Boolean>emptySet();
+    }
+
+    @Override
+    public ActivityRetainedComponentBuilder retainedComponentBuilder() {
+      return new ActivityRetainedCBuilder(singletonCImpl);
+    }
+
+    @Override
+    public ServiceComponentBuilder serviceComponentBuilder() {
+      return new ServiceCBuilder(singletonCImpl);
+    }
+
+    private static final class SwitchingProvider<T> implements Provider<T> {
+      private final SingletonCImpl singletonCImpl;
+
+      private final int id;
+
+      SwitchingProvider(SingletonCImpl singletonCImpl, int id) {
+        this.singletonCImpl = singletonCImpl;
+        this.id = id;
+      }
+
+      @SuppressWarnings("unchecked")
+      @Override
+      public T get() {
+        switch (id) {
+          case 0: // com.delta.playandroid.data.model.repository.HomeRepo 
+          return (T) RepositoryModule_ProvideHomeRepoFactory.provideHomeRepo(singletonCImpl.provideApiClientProvider.get());
+
+          case 1: // com.delta.playandroid.data.api.ApiClient 
+          return (T) ApiClientModule_ProvideApiClientFactory.provideApiClient(singletonCImpl.provideAddCookieInterceptorProvider.get(), singletonCImpl.provideGetCookieInterceptorProvider.get());
+
+          case 2: // com.delta.playandroid.data.interceptor.AddCookieInterceptor 
+          return (T) ApiClientModule_ProvideAddCookieInterceptorFactory.provideAddCookieInterceptor(singletonCImpl.provideDataStoreManagerProvider.get());
+
+          case 3: // com.delta.playandroid.data.local.Manager.DataStoreManager 
+          return (T) DataStoreModule_ProvideDataStoreManagerFactory.provideDataStoreManager(ApplicationContextModule_ProvideContextFactory.provideContext(singletonCImpl.applicationContextModule));
+
+          case 4: // com.delta.playandroid.data.interceptor.GetCookieInterceptor 
+          return (T) ApiClientModule_ProvideGetCookieInterceptorFactory.provideGetCookieInterceptor(singletonCImpl.provideDataStoreManagerProvider.get());
+
+          case 5: // com.delta.playandroid.data.model.repository.CollectRepo 
+          return (T) RepositoryModule_ProvideSelfInfoRepoFactory.provideSelfInfoRepo(singletonCImpl.provideApiClientProvider.get());
+
+          case 6: // com.delta.playandroid.data.model.repository.SystemRepo 
+          return (T) RepositoryModule_ProvideTreeRepoFactory.provideTreeRepo(singletonCImpl.provideApiClientProvider.get());
+
+          case 7: // com.delta.playandroid.data.model.repository.LoginRepo 
+          return (T) RepositoryModule_ProvideLoginRepoFactory.provideLoginRepo(singletonCImpl.provideApiClientProvider.get(), singletonCImpl.provideDataStoreManagerProvider.get());
+
+          case 8: // com.delta.playandroid.data.model.repository.ProjectRepo 
+          return (T) RepositoryModule_ProvideProjectRepoFactory.provideProjectRepo(singletonCImpl.provideApiClientProvider.get());
+
+          case 9: // com.delta.playandroid.data.model.repository.SearchRepo 
+          return (T) RepositoryModule_ProvideSearchRepoFactory.provideSearchRepo(singletonCImpl.provideApiClientProvider.get(), singletonCImpl.provideDataStoreManagerProvider.get());
+
+          default: throw new AssertionError(id);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="button_background_color">#03A9F4</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="transparent">#00000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="AutoLogin">自动登录</string>
+    <string name="Cancel">取消</string>
+    <string name="CannotFound">好像搜不到哦</string>
+    <string name="FastLogInUser">fast login user</string>
+    <string name="Fast_Login">快速登录</string>
+    <string name="FreeMode">游客模式</string>
+    <string name="HotKey">搜索热词</string>
+    <string name="IDTag">ID:</string>
+    <string name="JumpToLoginTag">跳转登录</string>
+    <string name="JumpToRegisterTag">注册</string>
+    <string name="Key">关键字</string>
+    <string name="LogIn">登入</string>
+    <string name="LoginTag">登录</string>
+    <string name="NoMore">已经到底了哟，点击添加项目</string>
+    <string name="No_AutoLoginUsers">暂无可自动登录的账号</string>
+    <string name="RegisterTag">注册</string>
+    <string name="RememberPassword">记住密码</string>
+    <string name="SearchHistory">搜索历史</string>
+    <string name="UserName">用户名</string>
+    <string name="UserScore">用户积分</string>
+    <string name="app_home_head_tag_name">首页</string>
+    <string name="app_home_project_tag_name">项目</string>
+    <string name="app_home_selfInfo_tag_name">我的</string>
+    <string name="app_home_tree_tag_name">知识树</string>
+    <string name="app_name">Play Android</string>
+    <string name="avatar_desc">avatar of the user</string>
+    <string name="coin_count">积分:</string>
+    <string name="coin_date">日期:</string>
+    <string name="coin_description">描述:</string>
+    <string name="coin_detail">个人积分获取详情</string>
+    <string name="coin_reason">原因:</string>
+    <string name="coin_type">类型:</string>
+    <string name="coin_username">用户名:</string>
+    <string name="desc">描述</string>
+    <string name="github">github:</string>
+    <string name="githubId">github地址</string>
+    <string name="hint_input_author">请输入新的作者\n</string>
+    <string name="hint_input_link">请输入新的网址\n</string>
+    <string name="hint_input_title">请输入新的标题\n</string>
+    <string name="id">暂无ID</string>
+    <string name="input_webname_hint">请输入网址别名</string>
+    <string name="loginBgDesc">bg of the loginPage</string>
+    <string name="myCollect">我的收藏</string>
+    <string name="myCollectText">我的收藏</string>
+    <string name="password">password</string>
+    <string name="pleaseLogin">请先登录~</string>
+    <string name="rank">暂无排名</string>
+    <string name="rankTag">排名:</string>
+    <string name="repassword">repassword</string>
+    <string name="search">搜索</string>
+    <string name="textTag">文字标签</string>
+    <string name="title">文章标题</string>
+    <string name="unvisible">不可见</string>
+    <string name="uploadTime">上传时间:</string>
+    <string name="uploadTimeId">上传时间</string>
+    <string name="url_input">请输入网址URL</string>
+    <string name="username">username</string>
+    <string name="web_name">网址别名</string>
+    <string name="website">网址</string>
+    <string name="writer">作者:</string>
+    <style name="Theme.PlayAndroidPro" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        
+        <item name="android:windowBackground">#03C8F4</item>
+        <item name="android:fitsSystemWindows">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="colorPrimary">@color/button_background_color</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        
+
+    </style>
+</resources>

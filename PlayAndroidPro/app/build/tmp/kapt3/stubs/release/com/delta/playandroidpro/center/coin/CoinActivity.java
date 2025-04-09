@@ -1,0 +1,24 @@
+package com.delta.playandroidpro.center.coin;
+
+/**
+ * @description 积分活动
+ * @author delta
+ * @date 2025/3/5 10:45
+ */
+@kotlin.Metadata(mv = {1, 9, 0}, k = 1, xi = 48, d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\u0018\u00002\u00020\u0001B\u0005\u00a2\u0006\u0002\u0010\u0002J\b\u0010\u0007\u001a\u00020\bH\u0002J\u0012\u0010\t\u001a\u00020\b2\b\u0010\n\u001a\u0004\u0018\u00010\u000bH\u0014R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082.\u00a2\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082.\u00a2\u0006\u0002\n\u0000\u00a8\u0006\f"}, d2 = {"Lcom/delta/playandroidpro/center/coin/CoinActivity;", "Landroidx/appcompat/app/AppCompatActivity;", "()V", "adapter", "Lcom/delta/playandroidpro/center/coin/DetailInfoAdapter;", "viewModel", "Lcom/delta/playandroidpro/center/coin/CoinViewModel;", "initView", "", "onCreate", "savedInstanceState", "Landroid/os/Bundle;", "app_release"})
+public final class CoinActivity extends androidx.appcompat.app.AppCompatActivity {
+    private com.delta.playandroidpro.center.coin.CoinViewModel viewModel;
+    private com.delta.playandroidpro.center.coin.DetailInfoAdapter adapter;
+    
+    public CoinActivity() {
+        super();
+    }
+    
+    @java.lang.Override
+    protected void onCreate(@org.jetbrains.annotations.Nullable
+    android.os.Bundle savedInstanceState) {
+    }
+    
+    private final void initView() {
+    }
+}

@@ -1,0 +1,52 @@
+com.delta.playandroid.app-pngs-0 D:\Android_project\PlayAndroid\app\build\generated\res\pngs\debug
+com.delta.playandroid.app-resValues-1 D:\Android_project\PlayAndroid\app\build\generated\res\resValues\debug
+com.delta.playandroid.app-packageDebugResources-2 D:\Android_project\PlayAndroid\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.delta.playandroid.app-packageDebugResources-3 D:\Android_project\PlayAndroid\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.delta.playandroid.app-debug-4 D:\Android_project\PlayAndroid\app\build\intermediates\merged_res\debug\mergeDebugResources
+com.delta.playandroid.app-debug-5 D:\Android_project\PlayAndroid\app\src\debug\res
+com.delta.playandroid.app-main-6 D:\Android_project\PlayAndroid\app\src\main\res
+com.delta.playandroid.app-lifecycle-runtime-ktx-2.6.1-7 D:\Android_project\gradle home\caches\transforms-4\0525c03a5744878113d3a5c44b654cc4\transformed\lifecycle-runtime-ktx-2.6.1\res
+com.delta.playandroid.app-viewpager2-1.0.0-8 D:\Android_project\gradle home\caches\transforms-4\0ab4ec381ff6dac18e2af9ec19d10bc7\transformed\viewpager2-1.0.0\res
+com.delta.playandroid.app-lifecycle-livedata-core-2.6.1-9 D:\Android_project\gradle home\caches\transforms-4\15424696009dfb5d84ecdc214c3f490d\transformed\lifecycle-livedata-core-2.6.1\res
+com.delta.playandroid.app-core-ktx-1.12.0-10 D:\Android_project\gradle home\caches\transforms-4\15e88c1c5609269e11c2df0238698cef\transformed\core-ktx-1.12.0\res
+com.delta.playandroid.app-lifecycle-process-2.6.1-11 D:\Android_project\gradle home\caches\transforms-4\16f36ee9e5ffb4dba4772c9423597d0d\transformed\lifecycle-process-2.6.1\res
+com.delta.playandroid.app-paging-runtime-ktx-3.3.2-12 D:\Android_project\gradle home\caches\transforms-4\1e177f7608d90fc8726ebfc4d1bd01cf\transformed\paging-runtime-ktx-3.3.2\res
+com.delta.playandroid.app-fragment-ktx-1.5.6-13 D:\Android_project\gradle home\caches\transforms-4\2254aa666bc8c1e7e5494637a1db08da\transformed\fragment-ktx-1.5.6\res
+com.delta.playandroid.app-flexbox-3.0.0-14 D:\Android_project\gradle home\caches\transforms-4\2baf33e1953522098bffb9441a6d7075\transformed\flexbox-3.0.0\res
+com.delta.playandroid.app-lifecycle-viewmodel-ktx-2.6.1-15 D:\Android_project\gradle home\caches\transforms-4\2fccad62c1076774b32c3c69d28fd415\transformed\lifecycle-viewmodel-ktx-2.6.1\res
+com.delta.playandroid.app-activity-ktx-1.8.0-16 D:\Android_project\gradle home\caches\transforms-4\3a72b496a3ef99bb287dfe35644f793c\transformed\activity-ktx-1.8.0\res
+com.delta.playandroid.app-profileinstaller-1.3.0-17 D:\Android_project\gradle home\caches\transforms-4\4c10af61dfa4b6e347d9f4e9bf5b90cb\transformed\profileinstaller-1.3.0\res
+com.delta.playandroid.app-fragment-1.5.6-18 D:\Android_project\gradle home\caches\transforms-4\5042f32c05d25f154daad19b742ef814\transformed\fragment-1.5.6\res
+com.delta.playandroid.app-appcompat-resources-1.6.1-19 D:\Android_project\gradle home\caches\transforms-4\60ee3d343a9a321ff3f8524acfede332\transformed\appcompat-resources-1.6.1\res
+com.delta.playandroid.app-core-1.12.0-20 D:\Android_project\gradle home\caches\transforms-4\62c804e796961804478726802045955e\transformed\core-1.12.0\res
+com.delta.playandroid.app-startup-runtime-1.1.1-21 D:\Android_project\gradle home\caches\transforms-4\6bc5a624abc6b4d01f0943f0bbcbb4bd\transformed\startup-runtime-1.1.1\res
+com.delta.playandroid.app-savedstate-1.2.1-22 D:\Android_project\gradle home\caches\transforms-4\7057cc6e3d23b1baa4bf53a0e202da34\transformed\savedstate-1.2.1\res
+com.delta.playandroid.app-datastore-core-release-23 D:\Android_project\gradle home\caches\transforms-4\75728aeebfe130e1b2ce32c6ab0e83cc\transformed\datastore-core-release\res
+com.delta.playandroid.app-lifecycle-service-2.6.1-24 D:\Android_project\gradle home\caches\transforms-4\76bcfe1990ebb60f62c6b1ff5fa7658a\transformed\lifecycle-service-2.6.1\res
+com.delta.playandroid.app-datastore-release-25 D:\Android_project\gradle home\caches\transforms-4\7f308b8438673d11e62e9d54bd63d62c\transformed\datastore-release\res
+com.delta.playandroid.app-material-1.10.0-26 D:\Android_project\gradle home\caches\transforms-4\806f7f7dbfcb8b2554cb4d48e10c7c35\transformed\material-1.10.0\res
+com.delta.playandroid.app-lifecycle-livedata-core-ktx-2.6.1-27 D:\Android_project\gradle home\caches\transforms-4\81a1e66f4caa1569bff486f2e0f21694\transformed\lifecycle-livedata-core-ktx-2.6.1\res
+com.delta.playandroid.app-paging-runtime-3.3.2-28 D:\Android_project\gradle home\caches\transforms-4\888cae3479546ce586c77ed6a9f5cb44\transformed\paging-runtime-3.3.2\res
+com.delta.playandroid.app-constraintlayout-2.1.4-29 D:\Android_project\gradle home\caches\transforms-4\899ba956d7c95dd588cc4fcf00ee7bf3\transformed\constraintlayout-2.1.4\res
+com.delta.playandroid.app-datastore-preferences-release-30 D:\Android_project\gradle home\caches\transforms-4\8d9ba60129cdbff7252b38d69d8496b5\transformed\datastore-preferences-release\res
+com.delta.playandroid.app-emoji2-1.2.0-31 D:\Android_project\gradle home\caches\transforms-4\97036c2ece9a586777920243941f6ee6\transformed\emoji2-1.2.0\res
+com.delta.playandroid.app-core-runtime-2.2.0-32 D:\Android_project\gradle home\caches\transforms-4\9a0c665a1db95f94c78d50fa3761eba4\transformed\core-runtime-2.2.0\res
+com.delta.playandroid.app-lifecycle-livedata-2.6.1-33 D:\Android_project\gradle home\caches\transforms-4\9d515b1517c578be5a23515cb03db458\transformed\lifecycle-livedata-2.6.1\res
+com.delta.playandroid.app-transition-1.2.0-34 D:\Android_project\gradle home\caches\transforms-4\9e7aac7b1cc9325bd9a9da0763a2a588\transformed\transition-1.2.0\res
+com.delta.playandroid.app-lifecycle-viewmodel-savedstate-2.6.1-35 D:\Android_project\gradle home\caches\transforms-4\ac60cddb2ef49cfb2bd059a82cf2ed93\transformed\lifecycle-viewmodel-savedstate-2.6.1\res
+com.delta.playandroid.app-databinding-runtime-8.5.1-36 D:\Android_project\gradle home\caches\transforms-4\b51993c84e466a3fe9de0eb5c83be00e\transformed\databinding-runtime-8.5.1\res
+com.delta.playandroid.app-lifecycle-livedata-ktx-2.6.1-37 D:\Android_project\gradle home\caches\transforms-4\b6deb398592fc71f1c7dc1dc63c21178\transformed\lifecycle-livedata-ktx-2.6.1\res
+com.delta.playandroid.app-glide-4.12.0-38 D:\Android_project\gradle home\caches\transforms-4\bc6980d7f2ccbe9e332d513e6cdd1d6f\transformed\glide-4.12.0\res
+com.delta.playandroid.app-databinding-adapters-8.5.1-39 D:\Android_project\gradle home\caches\transforms-4\c7364f18fa167c57fd213369e48b2aa6\transformed\databinding-adapters-8.5.1\res
+com.delta.playandroid.app-cardview-1.0.0-40 D:\Android_project\gradle home\caches\transforms-4\cb41c373c7641b4df458f12aa6777bff\transformed\cardview-1.0.0\res
+com.delta.playandroid.app-paging-common-release-41 D:\Android_project\gradle home\caches\transforms-4\cf5c64c906dad65ac3918d7f471cc1b6\transformed\paging-common-release\res
+com.delta.playandroid.app-recyclerview-1.2.1-42 D:\Android_project\gradle home\caches\transforms-4\d0fa65399bca5f75d9c3fc6e6b13be43\transformed\recyclerview-1.2.1\res
+com.delta.playandroid.app-annotation-experimental-1.3.0-43 D:\Android_project\gradle home\caches\transforms-4\d99390b6a9f3dca1da7dd03c7b8592ed\transformed\annotation-experimental-1.3.0\res
+com.delta.playandroid.app-coordinatorlayout-1.1.0-44 D:\Android_project\gradle home\caches\transforms-4\db91524cbdcc2af26204c1a599f0c0c8\transformed\coordinatorlayout-1.1.0\res
+com.delta.playandroid.app-activity-1.8.0-45 D:\Android_project\gradle home\caches\transforms-4\dcadc77a9e82983023a2f1632c44803a\transformed\activity-1.8.0\res
+com.delta.playandroid.app-appcompat-1.6.1-46 D:\Android_project\gradle home\caches\transforms-4\e03737ba3e7e613c74a96b73e440c461\transformed\appcompat-1.6.1\res
+com.delta.playandroid.app-savedstate-ktx-1.2.1-47 D:\Android_project\gradle home\caches\transforms-4\e459de8f36b88dd8e9d28c8bfdf3fdb9\transformed\savedstate-ktx-1.2.1\res
+com.delta.playandroid.app-lifecycle-viewmodel-2.6.1-48 D:\Android_project\gradle home\caches\transforms-4\e79ee87cd83ed7bda49cae11afa2155f\transformed\lifecycle-viewmodel-2.6.1\res
+com.delta.playandroid.app-lifecycle-runtime-2.6.1-49 D:\Android_project\gradle home\caches\transforms-4\eb4a6631f19847bf1633b0db9083c73f\transformed\lifecycle-runtime-2.6.1\res
+com.delta.playandroid.app-drawerlayout-1.1.1-50 D:\Android_project\gradle home\caches\transforms-4\f3745a1f4bec2ea5bc1f02e5a6077802\transformed\drawerlayout-1.1.1\res
+com.delta.playandroid.app-emoji2-views-helper-1.2.0-51 D:\Android_project\gradle home\caches\transforms-4\f5b82918151f14dc80d1084009e477cf\transformed\emoji2-views-helper-1.2.0\res

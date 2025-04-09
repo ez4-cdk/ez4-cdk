@@ -1,0 +1,114 @@
+[
+    {
+        "merged": "com.delta.playandroidpro.app-mergeDebugResources-3:/layout/search_result.xml",
+        "source": "com.delta.playandroidpro.app-main-6:/layout/search_result.xml"
+    },
+    {
+        "merged": "com.delta.playandroidpro.app-mergeDebugResources-3:/layout/home.xml",
+        "source": "com.delta.playandroidpro.app-main-6:/layout/home.xml"
+    },
+    {
+        "merged": "com.delta.playandroidpro.app-mergeDebugResources-3:/layout/collect_fm.xml",
+        "source": "com.delta.playandroidpro.app-main-6:/layout/collect_fm.xml"
+    },
+    {
+        "merged": "com.delta.playandroidpro.app-mergeDebugResources-3:/layout/website.xml",
+        "source": "com.delta.playandroidpro.app-main-6:/layout/website.xml"
+    },
+    {
+        "merged": "com.delta.playandroidpro.app-mergeDebugResources-3:/layout/footer.xml",
+        "source": "com.delta.playandroidpro.app-main-6:/layout/footer.xml"
+    },
+    {
+        "merged": "com.delta.playandroidpro.app-mergeDebugResources-3:/layout/collect.xml",
+        "source": "com.delta.playandroidpro.app-main-6:/layout/collect.xml"
+    },
+    {
+        "merged": "com.delta.playandroidpro.app-mergeDebugResources-3:/layout/edit_article.xml",
+        "source": "com.delta.playandroidpro.app-main-6:/layout/edit_article.xml"
+    },
+    {
+        "merged": "com.delta.playandroidpro.app-mergeDebugResources-3:/layout/center.xml",
+        "source": "com.delta.playandroidpro.app-main-6:/layout/center.xml"
+    },
+    {
+        "merged": "com.delta.playandroidpro.app-mergeDebugResources-3:/layout/search_info.xml",
+        "source": "com.delta.playandroidpro.app-main-6:/layout/search_info.xml"
+    },
+    {
+        "merged": "com.delta.playandroidpro.app-mergeDebugResources-3:/layout/column.xml",
+        "source": "com.delta.playandroidpro.app-main-6:/layout/column.xml"
+    },
+    {
+        "merged": "com.delta.playandroidpro.app-mergeDebugResources-3:/layout/login.xml",
+        "source": "com.delta.playandroidpro.app-main-6:/layout/login.xml"
+    },
+    {
+        "merged": "com.delta.playandroidpro.app-mergeDebugResources-3:/layout/coin.xml",
+        "source": "com.delta.playandroidpro.app-main-6:/layout/coin.xml"
+    },
+    {
+        "merged": "com.delta.playandroidpro.app-mergeDebugResources-3:/layout/auto_login_user.xml",
+        "source": "com.delta.playandroidpro.app-main-6:/layout/auto_login_user.xml"
+    },
+    {
+        "merged": "com.delta.playandroidpro.app-mergeDebugResources-3:/layout/frame_root.xml",
+        "source": "com.delta.playandroidpro.app-main-6:/layout/frame_root.xml"
+    },
+    {
+        "merged": "com.delta.playandroidpro.app-mergeDebugResources-3:/layout/article.xml",
+        "source": "com.delta.playandroidpro.app-main-6:/layout/article.xml"
+    },
+    {
+        "merged": "com.delta.playandroidpro.app-mergeDebugResources-3:/layout/project.xml",
+        "source": "com.delta.playandroidpro.app-main-6:/layout/project.xml"
+    },
+    {
+        "merged": "com.delta.playandroidpro.app-mergeDebugResources-3:/layout/signup.xml",
+        "source": "com.delta.playandroidpro.app-main-6:/layout/signup.xml"
+    },
+    {
+        "merged": "com.delta.playandroidpro.app-mergeDebugResources-3:/layout/expandable_card_view.xml",
+        "source": "com.delta.playandroidpro.app-main-6:/layout/expandable_card_view.xml"
+    },
+    {
+        "merged": "com.delta.playandroidpro.app-mergeDebugResources-3:/layout/search.xml",
+        "source": "com.delta.playandroidpro.app-main-6:/layout/search.xml"
+    },
+    {
+        "merged": "com.delta.playandroidpro.app-mergeDebugResources-3:/layout/coin_detail.xml",
+        "source": "com.delta.playandroidpro.app-main-6:/layout/coin_detail.xml"
+    },
+    {
+        "merged": "com.delta.playandroidpro.app-mergeDebugResources-3:/layout/webview.xml",
+        "source": "com.delta.playandroidpro.app-main-6:/layout/webview.xml"
+    },
+    {
+        "merged": "com.delta.playandroidpro.app-mergeDebugResources-3:/layout/projects.xml",
+        "source": "com.delta.playandroidpro.app-main-6:/layout/projects.xml"
+    },
+    {
+        "merged": "com.delta.playandroidpro.app-mergeDebugResources-3:/layout/edit_website.xml",
+        "source": "com.delta.playandroidpro.app-main-6:/layout/edit_website.xml"
+    },
+    {
+        "merged": "com.delta.playandroidpro.app-mergeDebugResources-3:/layout/my_info.xml",
+        "source": "com.delta.playandroidpro.app-main-6:/layout/my_info.xml"
+    },
+    {
+        "merged": "com.delta.playandroidpro.app-mergeDebugResources-3:/layout/articles.xml",
+        "source": "com.delta.playandroidpro.app-main-6:/layout/articles.xml"
+    },
+    {
+        "merged": "com.delta.playandroidpro.app-mergeDebugResources-3:/layout/banner_item.xml",
+        "source": "com.delta.playandroidpro.app-main-6:/layout/banner_item.xml"
+    },
+    {
+        "merged": "com.delta.playandroidpro.app-mergeDebugResources-3:/layout/columns.xml",
+        "source": "com.delta.playandroidpro.app-main-6:/layout/columns.xml"
+    },
+    {
+        "merged": "com.delta.playandroidpro.app-mergeDebugResources-3:/layout/key_textview.xml",
+        "source": "com.delta.playandroidpro.app-main-6:/layout/key_textview.xml"
+    }
+]

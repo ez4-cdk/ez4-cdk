@@ -1,0 +1,6 @@
+com.delta.playandroid.test.app-androidTest-0 D:\Android_project\PlayAndroid\app\build\generated\res\resValues\androidTest\debug
+com.delta.playandroid.test.app-mergeDebugAndroidTestResources-1 D:\Android_project\PlayAndroid\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.delta.playandroid.test.app-mergeDebugAndroidTestResources-2 D:\Android_project\PlayAndroid\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.delta.playandroid.test.app-debugAndroidTest-3 D:\Android_project\PlayAndroid\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources
+com.delta.playandroid.test.app-core-1.5.0-4 D:\Android_project\gradle home\caches\transforms-4\c80b4c1f09e02cfe3ab01acc4ce48ffd\transformed\core-1.5.0\res
+com.delta.playandroid.test.app-annotation-experimental-1.3.0-5 D:\Android_project\gradle home\caches\transforms-4\d99390b6a9f3dca1da7dd03c7b8592ed\transformed\annotation-experimental-1.3.0\res

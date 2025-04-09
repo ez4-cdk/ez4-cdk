@@ -1,0 +1,7 @@
+com.delta.util.test.util-androidTest-0 D:\Android_project\PlayAndroidPro\util\build\generated\res\resValues\androidTest\debug
+com.delta.util.test.util-mergeDebugAndroidTestResources-1 D:\Android_project\PlayAndroidPro\util\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.delta.util.test.util-mergeDebugAndroidTestResources-2 D:\Android_project\PlayAndroidPro\util\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.delta.util.test.util-debugAndroidTest-3 D:\Android_project\PlayAndroidPro\util\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources
+com.delta.util.test.util-debug-4 D:\Android_project\PlayAndroidPro\util\build\intermediates\packaged_res\debug\packageDebugResources
+com.delta.util.test.util-datastore-preferences-1.0.0-5 D:\Android_project\gradle home\caches\transforms-4\396204270e8b8975f025f4f6878aaf17\transformed\datastore-preferences-1.0.0\res
+com.delta.util.test.util-datastore-1.0.0-6 D:\Android_project\gradle home\caches\transforms-4\40ae5272c35ad04ce3a4a56a96e0aefa\transformed\datastore-1.0.0\res
