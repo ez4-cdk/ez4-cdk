@@ -1,4 +1,5 @@
-#自我介绍
-我是广东工业大学计算机学院计算机科学与技术22级2班的学生，来自广东省云浮市罗定县，肉桂的家乡，肠粉的发源地。
-兴趣爱好是研究代码的业务模块，比如怎么去实现一个抽奖系统，怎么去设计一个扫码点餐的程序等等，每完成一个业务模块，成就感跃然码上，虽然学得很慢。
-有关本人的学习经历（更类似于技术栈）：自学了Android应用开发（大一）、javaweb的前后端基础知识（大二），项目做得不太好便不作展示
+#self introduction
+Hi,im a learning android developer.
+I will show the app i made during my university on the github platform.
+if u are interested,please feel free to leave your opinion on my work.
+ (* ^ . ^ *)
