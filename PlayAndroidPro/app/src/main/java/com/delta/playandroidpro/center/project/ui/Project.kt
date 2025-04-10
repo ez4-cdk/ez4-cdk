@@ -3,10 +3,12 @@ package com.delta.playandroidpro.center.project.ui
 import android.content.Intent
 import android.view.View
 import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.delta.playandroidpro.PlayAndroidPro
 import com.delta.playandroidpro.R
 import com.delta.playandroidpro.center.project.ProjectViewModel
 import com.delta.playandroidpro.center.project.ui.adapter.ProjectAdapter
@@ -19,7 +21,7 @@ import kotlinx.coroutines.launch
 
 class Project : BaseFragment<ProjectsBinding>(R.layout.projects, ProjectsBinding::inflate),
     ProjectAdapter.onProjectItemClickListener {
-    private val viewModel by lazy { ProjectViewModel() }
+    private lateinit var viewModel: ProjectViewModel
     private val projectAdapter by lazy { ProjectAdapter(this) }
     override fun loading() {
         binding.projectsProgressBar.visibility = View.VISIBLE
@@ -30,6 +32,11 @@ class Project : BaseFragment<ProjectsBinding>(R.layout.projects, ProjectsBinding
     }
 
     override fun initView() {
+
+        viewModel = ViewModelProvider(this).get(ProjectViewModel::class.java).also {
+            it.setCookie((requireActivity().application as PlayAndroidPro).getCookie().toString())
+        }
+
         binding.tabRv.layoutManager = LinearLayoutManager(this.context)
         binding.tabRv.adapter = projectAdapter
 

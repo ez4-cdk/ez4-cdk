@@ -2,6 +2,7 @@ package com.delta.playandroidpro.collect
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.widget.ViewPager2
 import com.delta.playandroidpro.PlayAndroidPro
 import com.delta.playandroidpro.R
@@ -17,8 +18,7 @@ import com.google.android.material.tabs.TabLayoutMediator
  * @date 2025/3/3 11:51
  */
 class Collect : AppCompatActivity() {
-
-    private val cookie by lazy{(application as PlayAndroidPro).getCookie().toString()}
+    private lateinit var viewModel: CollectViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.collect)
@@ -26,6 +26,10 @@ class Collect : AppCompatActivity() {
     }
 
     private fun initView() {
+
+        viewModel = ViewModelProvider(this).get(CollectViewModel::class.java).also {
+            it.setCookie((application as PlayAndroidPro).getCookie().toString())
+        }
 
         val collectArticlesFM = CollectedArticles()
         val collectedWebsitesFM = CollectedWebsites()

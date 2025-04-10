@@ -23,86 +23,82 @@ import kotlinx.coroutines.launch
  * @date 2025/3/3 11:51
  */
 class CollectModel {
+
+    private lateinit var netProxy : CollectService
+    fun init(cookie: String) {
+        netProxy = ServiceBuilder.buildService(CollectService::class.java, cookie)
+    }
     fun getCollectedArticles(
         viewModel: CollectViewModel,
         _collectArticles: MutableLiveData<Flow<PagingData<Article>>>,
-        cookie: String
     ) {
         _collectArticles.postValue(
             Pager(
                 config = PagingConfig(pageSize = 40, enablePlaceholders = true),
-                pagingSourceFactory = { CollectedArticleDataSource(cookie) }
+                pagingSourceFactory = { CollectedArticleDataSource(netProxy) }
             ).flow.cachedIn(viewModel.viewModelScope)
         )
     }
 
-    fun getCollectedWebsites(_collectWebsites: MutableLiveData<ArrayList<Website>>, cookie: String) {
+    fun getCollectedWebsites(_collectWebsites: MutableLiveData<ArrayList<Website>>) {
         CoroutineScope(Dispatchers.IO).launch {
-            val res = ServiceBuilder.buildService(CollectService::class.java, cookie)
-                .getCollectWebs()
+            val res = netProxy.getCollectWebs()
             if (res.isSuccessful && res.body()?.errorCode == 0) {
                 _collectWebsites.postValue(res.body()?.data)
             }
         }
     }
 
-    suspend fun collectArticle(article: Article, cookie: String): Boolean {
-        val response = ServiceBuilder.buildService(CollectService::class.java, cookie)
-            .collectInsideArticle(article.originId)
+    suspend fun collectArticle(article: Article): Boolean {
+        val response = netProxy.collectInsideArticle(article.originId)
         if (response.isSuccessful && response.body()?.errorCode == 0) {
             return true
         }
         return false
     }
 
-    suspend fun addCollectArticle(article: Article, cookie: String): Boolean {
-        val response = ServiceBuilder.buildService(CollectService::class.java, cookie)
-            .addCollectArticle(article.title, article.link, article.author)
+    suspend fun addCollectArticle(article: Article): Boolean {
+        val response = netProxy.addCollectArticle(article.title, article.link, article.author)
         if (response.isSuccessful && response.body()?.errorCode == 0) {
             return true
         }
         return false
     }
 
-    suspend fun disCollectArticle(article: Article, cookie: String): Boolean {
-        val response = ServiceBuilder.buildService(CollectService::class.java, cookie)
-            .disCollectInsideArticle(article.id, article.originId)
+    suspend fun disCollectArticle(article: Article): Boolean {
+        val response = netProxy.disCollectInsideArticle(article.id, article.originId)
         if (response.isSuccessful && response.body()?.errorCode == 0) {
             return true
         }
         return false
     }
 
-    suspend fun editCollectArticle(article: Article, cookie: String): Boolean {
-        val response = ServiceBuilder.buildService(CollectService::class.java, cookie)
-            .editCollectArticle(article.id, article.title, article.link, article.author)
+    suspend fun editCollectArticle(article: Article): Boolean {
+        val response = netProxy.editCollectArticle(article.id, article.title, article.link, article.author)
         if (response.isSuccessful && response.body()?.errorCode == 0) {
             return true
         }
         return false
     }
 
-    suspend fun collectWebsite(website: Website, cookie: String): Boolean {
-        val response = ServiceBuilder.buildService(CollectService::class.java, cookie)
-            .collectWebsite(website.name, website.link)
+    suspend fun collectWebsite(website: Website): Boolean {
+        val response = netProxy.collectWebsite(website.name, website.link)
         if (response.isSuccessful && response.body()?.errorCode == 0) {
             return true
         }
         return false
     }
 
-    suspend fun disCollectWebsite(website: Website, cookie: String): Boolean {
-        val response = ServiceBuilder.buildService(CollectService::class.java, cookie)
-            .deleteCollectWebsite(website.id)
+    suspend fun disCollectWebsite(website: Website): Boolean {
+        val response = netProxy.deleteCollectWebsite(website.id)
         if (response.isSuccessful && response.body()?.errorCode == 0) {
             return true
         }
         return false
     }
 
-    suspend fun editCollectWebsite(website: Website, cookie: String): Boolean {
-        val response = ServiceBuilder.buildService(CollectService::class.java, cookie)
-            .editCollectWebsite(website.id, website.name, website.link)
+    suspend fun editCollectWebsite(website: Website): Boolean {
+        val response = netProxy.editCollectWebsite(website.id, website.name, website.link)
         if (response.isSuccessful && response.body()?.errorCode == 0) {
             return true
         }

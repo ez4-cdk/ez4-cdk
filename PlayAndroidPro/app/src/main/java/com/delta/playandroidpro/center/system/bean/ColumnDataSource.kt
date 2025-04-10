@@ -3,6 +3,7 @@ package com.delta.playandroidpro.center.system.bean
 import android.util.Log
 import com.delta.playandroidpro.center.home.bean.entity.Article
 import com.delta.playandroidpro.center.project.ProjectViewModel
+import com.delta.playandroidpro.collect.bean.CollectService
 import com.delta.playandroidpro.common.BasePagingDataSource
 import com.delta.util.net.ServiceBuilder
 
@@ -11,11 +12,14 @@ import com.delta.util.net.ServiceBuilder
  * @author delta
  * @date 2025/2/26 12:42
  */
-class ColumnDataSource(cid: Int) : BasePagingDataSource<Article>(
+class ColumnDataSource(
+    cid: Int,
+    netProxy: SystemService
+) : BasePagingDataSource<Article>(
     {
         try {
             val response =
-                ServiceBuilder.buildService(SystemService::class.java).articleUnderDataCid(it, cid)
+                netProxy.articleUnderDataCid(it, cid)
             Result.success(response.body()?.data?.datas.orEmpty())
         }catch (e:Exception){
             Result.failure(e)

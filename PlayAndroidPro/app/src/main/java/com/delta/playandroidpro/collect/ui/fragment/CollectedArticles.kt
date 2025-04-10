@@ -37,7 +37,6 @@ class CollectedArticles :
     }
 
     override fun initView() {
-        viewModel.initCookie((requireActivity().application as PlayAndroidPro).getCookie().toString())
 
         adapter = CollectArticlesAdapter(
             (requireActivity().application as PlayAndroidPro).getUser(),

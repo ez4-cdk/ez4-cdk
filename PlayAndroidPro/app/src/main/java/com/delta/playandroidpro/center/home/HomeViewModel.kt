@@ -25,13 +25,24 @@ class HomeViewModel : ViewModel() {
     val exception :LiveData<String> get() = _exception
 
     // ViewModel私用成员
-    private val homeModel by lazy { HomeModel() }
+    private lateinit var homeModel: HomeModel
     private val mutex = Mutex()
+    private val cookie:LiveData<String> get() = _cookie
+    private val _cookie = MutableLiveData<String>()
 
     // 暴露给model的数据
     private val _bannerList = MutableLiveData<List<Banner>>()
     private val _articleList = MutableLiveData<Flow<PagingData<Article>>>()
     private val _exception = MutableLiveData<String>()
+
+    fun setCookie(cookie: String) {
+        _cookie.value = cookie
+        if (!::homeModel.isInitialized){
+            homeModel = HomeModel().also {
+                it.init(cookie)
+            }
+        }
+    }
 
     fun getBannerList() {
         viewModelScope.launch(Dispatchers.IO) {
@@ -45,13 +56,13 @@ class HomeViewModel : ViewModel() {
         }
     }
 
-    suspend fun collectArticle(article: Article,cookie:String) :Boolean=
+    suspend fun collectArticle(article: Article) :Boolean=
         mutex.withLock {
-            homeModel.collectArticle(_exception, article,cookie)
+            homeModel.collectArticle(_exception, article)
         }
 
-    suspend fun discollectArticle(article: Article,cookie:String) :Boolean=
+    suspend fun discollectArticle(article: Article) :Boolean=
         mutex.withLock {
-            homeModel.discollectArticle(_exception, article,cookie)
+            homeModel.discollectArticle(_exception, article)
         }
 }

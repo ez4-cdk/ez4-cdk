@@ -15,11 +15,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.repeatOnLifecycle
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.delta.playandroidpro.PlayAndroidPro
 import com.delta.playandroidpro.R
 import com.delta.playandroidpro.center.coin.CoinActivity
@@ -27,13 +24,11 @@ import com.delta.playandroidpro.center.coin.CoinViewModel
 import com.delta.playandroidpro.center.system.ui.fragment.System
 import com.delta.playandroidpro.center.home.ui.Home
 import com.delta.playandroidpro.center.project.ui.Project
-import com.delta.playandroidpro.center.coin.DetailInfoAdapter
 import com.delta.playandroidpro.collect.Collect
 import com.delta.playandroidpro.search.Search
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
@@ -114,7 +109,10 @@ class Center : AppCompatActivity() {
 
     private fun initView() {
 
-        viewModel = CoinViewModel()
+        viewModel = ViewModelProvider(this).get(CoinViewModel::class.java).also {
+            it.setCookie((application as PlayAndroidPro).getCookie().toString())
+            it.setUser((application as PlayAndroidPro).getUser()!!)
+        }
 
         // 侧滑菜单栏
         // 侧滑主体
@@ -166,9 +164,6 @@ class Center : AppCompatActivity() {
             val bitmap = android.graphics.BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
             headView.findViewById<ImageView>(R.id.user_avatar).setImageBitmap(bitmap)
         }
-
-        viewModel.setUser((application as PlayAndroidPro).getUser()!!)
-        viewModel.setCookie((application as PlayAndroidPro).getCookie().toString())
 
         headView.findViewById<ImageView>(R.id.user_avatar).setOnClickListener {
             openGallery()

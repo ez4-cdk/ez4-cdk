@@ -21,8 +21,12 @@ import kotlinx.coroutines.launch
  * @date 2025/2/25 18:14
  */
 class ProjectModel {
+    private lateinit var netProxy: ProjectService
+    fun init(cookie: String){
+        netProxy = ServiceBuilder.buildService(ProjectService::class.java, cookie)
+    }
     suspend fun getProjectCategory(_projectList: MutableLiveData<ArrayList<Column>>) {
-        ServiceBuilder.buildService(ProjectService::class.java).projects().let {
+        netProxy.projects().let {
             if (it.isSuccessful) {
                 _projectList.postValue(it.body()?.data)
             } else {
@@ -39,7 +43,7 @@ class ProjectModel {
     ) {
         val pagerFlow = Pager(
             config = PagingConfig(pageSize = 40, enablePlaceholders = true),
-            pagingSourceFactory = { ProjectDataSource(cid) }
+            pagingSourceFactory = { ProjectDataSource(cid,netProxy) }
         ).flow.cachedIn(viewModel.viewModelScope)
 
         viewModel.viewModelScope.launch {

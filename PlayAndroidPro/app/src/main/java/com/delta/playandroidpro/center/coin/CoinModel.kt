@@ -17,9 +17,13 @@ import kotlinx.coroutines.flow.Flow
  * @date 2025/3/5 10:45
  */
 class CoinModel {
-    suspend fun getCoinInfo(_coin: MutableLiveData<Coin>, _cookie: MutableLiveData<String>) {
-        val response = ServiceBuilder.buildService(CoinService::class.java, _cookie.value)
-            .getMyCoinInfo()
+
+    private lateinit var netProxy: CoinService
+    fun init(cookie:String) {
+        netProxy = ServiceBuilder.buildService(CoinService::class.java,cookie)
+    }
+    suspend fun getCoinInfo(_coin: MutableLiveData<Coin>) {
+        val response = netProxy.getMyCoinInfo()
         if (response.isSuccessful && response.body() != null) {
             _coin.postValue(response.body()!!.data)
         }
@@ -27,7 +31,6 @@ class CoinModel {
 
     fun getCoinDetailInfo(
         _coinDetail: MutableLiveData<Flow<PagingData<CoinDetail>>>,
-        _cookie: MutableLiveData<String>
     ) {
         _coinDetail.postValue(Pager(
             config = PagingConfig(
@@ -35,7 +38,7 @@ class CoinModel {
                 enablePlaceholders = true
             ), pagingSourceFactory = {
                 CoinDetailDataSource(
-                    _cookie.value!!
+                    netProxy
                 )
             }).flow
         )

@@ -3,6 +3,7 @@ package com.delta.playandroidpro.center.system.ui.fragment
 import android.content.Intent
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
@@ -26,7 +27,7 @@ import kotlinx.coroutines.launch
  */
 class Articles : BaseFragment<ArticlesBinding>(R.layout.articles, ArticlesBinding::inflate),
     ArticleAdapter.onArticleClickInterFace {
-    private val viewModel: SystemViewModel by activityViewModels()
+    private val viewModel: SystemViewModel by viewModels({requireParentFragment() as System})
 
     private var tabList = ArrayList<String>()
     private val adapter by lazy {
@@ -36,9 +37,6 @@ class Articles : BaseFragment<ArticlesBinding>(R.layout.articles, ArticlesBindin
         )
     }
     private var expandPosition: Int = -1
-    private val cookie by lazy {
-        (requireActivity().application as PlayAndroidPro).getCookie().toString()
-    }
 
     override fun loading() {
     }
@@ -100,11 +98,11 @@ class Articles : BaseFragment<ArticlesBinding>(R.layout.articles, ArticlesBindin
     }
 
     override suspend fun onCollectArticle(article: Article): Boolean {
-        return viewModel.collectArticle(article, cookie)
+        return viewModel.collectArticle(article)
     }
 
     override suspend fun onDiscollectArticle(article: Article): Boolean {
-        return viewModel.discollectArticle(article, cookie)
+        return viewModel.discollectArticle(article)
     }
 
     override suspend fun onShowArticleInWeb(article: Article) {

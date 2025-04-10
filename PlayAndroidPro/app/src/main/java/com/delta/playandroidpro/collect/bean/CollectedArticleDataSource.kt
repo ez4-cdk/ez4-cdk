@@ -11,11 +11,11 @@ import com.delta.util.net.ServiceBuilder
  * @date 2025/3/3 11:34
  */
 class CollectedArticleDataSource(
-    val cookie:String
+    val netProxy: CollectService
 ):BasePagingDataSource<Article>(
     {
         try {
-            val response = ServiceBuilder.buildService(CollectService::class.java,cookie).getCollectArticles(it)
+            val response = netProxy.getCollectArticles(it)
             Result.success(response.body()?.data?.datas.orEmpty()   )
         }catch (e:Exception){
             Log.d("CollectedArticleDataSource",e.message.toString())

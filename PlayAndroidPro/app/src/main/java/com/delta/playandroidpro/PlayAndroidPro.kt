@@ -21,7 +21,11 @@ class PlayAndroidPro:Application() {
         this.user = user
     }
     fun getCookie(): HashSet<String>? {
-        return cookie
+        return if (cookie == null){
+            HashSet()
+        }else{
+            cookie
+        }
     }
 
     fun setCookie(cookie: HashSet<String>) {

@@ -3,6 +3,7 @@ package com.delta.playandroidpro.center.coin
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -28,9 +29,10 @@ class CoinActivity:AppCompatActivity() {
     }
 
     private fun initView() {
-        viewModel = CoinViewModel()
-        viewModel.setUser((application as PlayAndroidPro).getUser()!!)
-        viewModel.setCookie((application as PlayAndroidPro).getCookie().toString())
+        viewModel = ViewModelProvider(this).get(CoinViewModel::class.java).also {
+            it.setUser((application as PlayAndroidPro).getUser()!!)
+            it.setCookie((application as PlayAndroidPro).getCookie().toString())
+        }
         adapter = DetailInfoAdapter()
         val rv = findViewById<RecyclerView>(R.id.coin_recyclerview)
         rv.layoutManager = LinearLayoutManager(this)

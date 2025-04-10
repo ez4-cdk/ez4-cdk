@@ -14,7 +14,9 @@ import com.delta.playandroidpro.login.viewmodel.SignUpViewModel
 class SignUp : BaseFragment<SignupBinding>(R.layout.signup,SignupBinding::inflate) {
 
     private val signUpViewModel : SignUpViewModel by lazy {
-        ViewModelProvider(this).get(SignUpViewModel::class.java)
+        ViewModelProvider(this).get(SignUpViewModel::class.java).also {
+            it.init("")
+        }
     }
 
     override fun loading() {

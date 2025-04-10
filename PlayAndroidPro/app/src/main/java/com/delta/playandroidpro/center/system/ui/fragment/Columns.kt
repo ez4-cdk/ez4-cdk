@@ -1,6 +1,7 @@
 package com.delta.playandroidpro.center.system.ui.fragment
 
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.delta.playandroidpro.R
 import com.delta.playandroidpro.center.system.SystemViewModel
@@ -16,7 +17,7 @@ import com.delta.playandroidpro.databinding.ColumnsBinding
  */
 class Columns : BaseFragment<ColumnsBinding>(R.layout.columns, ColumnsBinding::inflate),
     ColumnAdapter.onColumnClickListener {
-    private val viewModel: SystemViewModel by activityViewModels()
+    private val viewModel: SystemViewModel by viewModels({requireParentFragment() as System})
     private val columnAdapter by lazy { ColumnAdapter(this) }
     override fun loading() {
     }

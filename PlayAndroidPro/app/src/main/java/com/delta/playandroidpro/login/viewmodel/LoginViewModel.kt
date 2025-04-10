@@ -22,7 +22,7 @@ class LoginViewModel(): ViewModel() {
     val cookie :LiveData<HashSet<String>> get() = _cookie
 
     // ViewModel私用成员
-    private val loginModel by lazy { LoginModel() }
+    private lateinit var loginModel: LoginModel
     private var mutex = false
 
 
@@ -32,6 +32,14 @@ class LoginViewModel(): ViewModel() {
     private val _loginInfo = MutableLiveData<String>()
     private val _autoLoginUser = MutableLiveData<ArrayList<User>>()
     private val _cookie = MutableLiveData<HashSet<String>>()
+
+    fun init(cookie: String) {
+        if (!::loginModel.isInitialized){
+            loginModel = LoginModel().also {
+                it.setCookie(cookie)
+            }
+        }
+    }
 
     fun loadLastLoginUser(context: Context) {
         viewModelScope.launch(Dispatchers.IO) {

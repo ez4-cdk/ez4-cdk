@@ -13,11 +13,13 @@ import com.delta.util.net.ServiceBuilder
  * @author delta
  * @date 2025/2/23 13:01
  */
-class ArticleDataSource : BasePagingDataSource<Article>(
+class ArticleDataSource (
+    val netProxy:HomeService
+): BasePagingDataSource<Article>(
     {
         try {
-            val response = ServiceBuilder.buildService(HomeService::class.java).article(it)
-            Result.success(response.body()!!.data.datas.orEmpty())
+            val response = netProxy.article(it)
+            Result.success(response.body()!!.data.datas)
         }catch (e:Exception){
             Log.d("ArticleDataSource",e.message.toString())
             Result.failure(e)

@@ -7,12 +7,12 @@ import com.delta.playandroidpro.common.BasePagingDataSource
 import com.delta.util.net.ServiceBuilder
 
 class ProjectDataSource(
-    val cid: Int
+    val cid: Int,
+    val netProxy: ProjectService
 ) : BasePagingDataSource<Article>(
     {
         try {
-            val response =
-                ServiceBuilder.buildService(ProjectService::class.java).projectArticle(it,cid)
+            val response = netProxy.projectArticle(it,cid)
             Result.success(response.body()?.data?.datas.orEmpty())
         }catch (e:Exception){
             Result.failure(e)

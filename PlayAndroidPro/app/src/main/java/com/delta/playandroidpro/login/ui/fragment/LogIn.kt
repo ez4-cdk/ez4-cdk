@@ -20,7 +20,9 @@ import kotlinx.coroutines.runBlocking
 class LogIn:BaseFragment<LoginBinding>(R.layout.login,LoginBinding::inflate),
     ExpandableCardView.onClickListener {
     private val loginViewModel: LoginViewModel by lazy {
-        ViewModelProvider(this).get(LoginViewModel::class.java)
+        ViewModelProvider(this).get(LoginViewModel::class.java).also {
+            it.init("")
+        }
     }
 
     override fun loading() {

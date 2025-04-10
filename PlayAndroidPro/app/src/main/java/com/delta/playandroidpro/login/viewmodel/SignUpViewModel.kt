@@ -4,8 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.delta.playandroidpro.login.LoginModel
-import com.delta.playandroidpro.login.SignupModel
+import com.delta.playandroidpro.login.SignUpModel
 import com.delta.playandroidpro.login.bean.User
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -18,13 +17,21 @@ class SignUpViewModel : ViewModel() {
     val cookie : LiveData<HashSet<String>> get() = _cookie
 
     // ViewModel私用成员
-    private val signupModel by lazy { SignupModel() }
+    private lateinit var signupModel :SignUpModel
     private var mutex = false
 
     // 暴露给model的数据
     private val _signUpStatus = MutableLiveData<User?>()
     private val _signUpInfo = MutableLiveData<String>()
     private val _cookie = MutableLiveData<HashSet<String>>()
+
+    fun init(cookie: String) {
+        if (!::signupModel.isInitialized){
+            signupModel = SignUpModel().also {
+                it.setCookie(cookie)
+            }
+        }
+    }
 
     fun signUp(username:String,password:String,repassword:String){
         if (!mutex){

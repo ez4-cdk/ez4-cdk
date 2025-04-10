@@ -28,9 +28,6 @@ import kotlinx.coroutines.launch
 class Home:BaseFragment<HomeBinding>(R.layout.home,HomeBinding::inflate),BannerAdapter.onBannerClick,
     ArticleAdapter.onArticleClickInterFace {
     private lateinit var viewModel: HomeViewModel
-    private val cookie by lazy {
-        (requireActivity().application as PlayAndroidPro).getCookie().toString()
-    }
 
     override fun loading() {
     }
@@ -40,7 +37,9 @@ class Home:BaseFragment<HomeBinding>(R.layout.home,HomeBinding::inflate),BannerA
 
     override fun initView() {
 
-        viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(HomeViewModel::class.java).also {
+            it.setCookie((requireActivity().application as PlayAndroidPro).getCookie().toString())
+        }
 
         //轮播图
         viewModel.bannerList.observe(this){
@@ -107,14 +106,14 @@ class Home:BaseFragment<HomeBinding>(R.layout.home,HomeBinding::inflate),BannerA
     }
 
     override suspend fun onCollectArticle(article: Article):Boolean =
-        viewModel.collectArticle(article, cookie).also {
+        viewModel.collectArticle(article).also {
             if (it) {
                 (requireActivity().application as PlayAndroidPro).getUser()?.collectIds?.add(article.id)
             }
         }
 
     override suspend fun onDiscollectArticle(article: Article): Boolean {
-        return viewModel.discollectArticle(article,cookie).also {
+        return viewModel.discollectArticle(article).also {
             if (it) {
                 (requireActivity().application as PlayAndroidPro).getUser()?.collectIds?.remove(article.id)
             }

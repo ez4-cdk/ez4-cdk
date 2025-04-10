@@ -23,11 +23,22 @@ class ProjectViewModel:ViewModel() {
     val projectList: LiveData<ArrayList<Column>> get() = _projectList
 
     // ViewModel私用成员
-    private val projectModel by lazy { ProjectModel() }
+    private lateinit var projectModel : ProjectModel
+    private val _cookie = MutableLiveData<String>()
+    private val cookie :LiveData<String> get() = _cookie
 
     // 暴露给model的数据
     private val _currentArticleList = MutableStateFlow<PagingData<Article>>(PagingData.empty())
     private val _projectList = MutableLiveData<ArrayList<Column>>()
+
+    fun setCookie(cookie: String) {
+        _cookie.value = cookie
+        if (!::projectModel.isInitialized){
+            projectModel = ProjectModel().also {
+                it.init(cookie)
+            }
+        }
+    }
 
     fun getProjectList() {
         viewModelScope.launch (Dispatchers.IO){

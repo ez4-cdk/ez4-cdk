@@ -10,10 +10,10 @@ import com.delta.util.net.ServiceBuilder
  * @date 2025/3/5 10:44
  */
 class CoinDetailDataSource(
-    cookie:String
+    netProxy: CoinService
 ):BasePagingDataSource<CoinDetail>(
     {
-        val response = ServiceBuilder.buildService(CoinService::class.java,cookie).getMyCoinDetailInfo(it)
+        val response = netProxy.getMyCoinDetailInfo(it)
         Result.success(response.body()?.data?.datas.orEmpty())
     }, CoinDetail::class.java
 )

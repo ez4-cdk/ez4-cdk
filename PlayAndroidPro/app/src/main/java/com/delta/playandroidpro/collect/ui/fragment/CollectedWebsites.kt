@@ -3,7 +3,6 @@ package com.delta.playandroidpro.collect.ui.fragment
 import android.content.Intent
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.delta.playandroidpro.PlayAndroidPro
 import com.delta.playandroidpro.R
 import com.delta.playandroidpro.center.home.bean.entity.Website
 import com.delta.playandroidpro.collect.CollectViewModel
@@ -28,7 +27,6 @@ class CollectedWebsites: BaseFragment<CollectFmBinding>(R.layout.collect_fm, Col
     }
 
     override fun initView() {
-        viewModel.initCookie((requireActivity().application as PlayAndroidPro).getCookie().toString())
 
         adapter = CollectWebsitesAdapter(this)
 

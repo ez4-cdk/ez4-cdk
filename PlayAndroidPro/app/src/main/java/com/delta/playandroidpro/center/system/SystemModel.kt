@@ -22,9 +22,14 @@ import kotlinx.coroutines.launch
  */
 class SystemModel {
 
+    private lateinit var netProxy: SystemService
+    fun init(cookie: String){
+        netProxy = ServiceBuilder.buildService(SystemService::class.java,cookie)
+    }
+
     //获取column的标签
     suspend fun getSystemColumn(systemColumns: MutableLiveData<ArrayList<Column>>) {
-        ServiceBuilder.buildService(SystemService::class.java).data().let {
+        netProxy.data().let {
             if (it.isSuccessful) {
                 systemColumns.postValue(it.body()?.data as ArrayList<Column>)
             }
@@ -35,7 +40,7 @@ class SystemModel {
     fun getArticleUnderColumn(viewModel: SystemViewModel,articleFlow: MutableStateFlow<PagingData<Article>>, cid: Int) {
         val pagerFlow = Pager(
             config = PagingConfig(pageSize = 40, enablePlaceholders = true),
-            pagingSourceFactory = { ColumnDataSource(cid) }
+            pagingSourceFactory = { ColumnDataSource(cid,netProxy) }
         ).flow
             .cachedIn(viewModel.viewModelScope)
 
@@ -46,8 +51,8 @@ class SystemModel {
         }
     }
 
-    suspend fun collectArticle(_exception: MutableLiveData<String>, article: Article, cookie:String):Boolean{
-        ServiceBuilder.buildService(SystemService::class.java,cookie).collectInsideArticle(article.id).let {
+    suspend fun collectArticle(_exception: MutableLiveData<String>, article: Article):Boolean{
+        netProxy.collectInsideArticle(article.id).let {
             if (it.isSuccessful&&it.body()!=null) {
                 if (it.body()?.errorCode == 0){
                     return true
@@ -61,8 +66,8 @@ class SystemModel {
         }
     }
 
-    suspend fun discollectArticle(_exception: MutableLiveData<String>, article: Article, cookie:String):Boolean{
-        ServiceBuilder.buildService(SystemService::class.java,cookie).unCollectInsideArticle(article.originId).let {
+    suspend fun discollectArticle(_exception: MutableLiveData<String>, article: Article):Boolean{
+        netProxy.unCollectInsideArticle(article.originId).let {
             if (it.isSuccessful&&it.body()!=null) {
                 if (it.body()?.errorCode == 0){
                     return true

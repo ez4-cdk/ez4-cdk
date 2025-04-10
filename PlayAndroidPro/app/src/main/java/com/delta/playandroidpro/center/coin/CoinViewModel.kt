@@ -20,16 +20,16 @@ import kotlinx.coroutines.launch
 class CoinViewModel :ViewModel() {
     // 暴露给view的数据
     val user:LiveData<User> get() = _user
-    val cookie:LiveData<String> get() = _cookie
     val coinInfo:LiveData<Coin> get() = _coinInfo
     val coinDetail:LiveData<Flow<PagingData<CoinDetail>>> get() = _coinDetail
 
     // ViewModel私用数据
-    private val coinModel = CoinModel()
+    private lateinit var coinModel: CoinModel
+    val cookie:LiveData<String> get() = _cookie
+    private val _cookie = MutableLiveData<String>()
 
     // 暴露给model的数据
     private val _user = MutableLiveData<User>()
-    private val _cookie = MutableLiveData<String>()
     private val _coinInfo = MutableLiveData<Coin>()
     private val _coinDetail = MutableLiveData<Flow<PagingData<CoinDetail>>>()
 
@@ -39,17 +39,22 @@ class CoinViewModel :ViewModel() {
 
     fun setCookie(cookie: String){
         _cookie.value = cookie
+        if (!::coinModel.isInitialized){
+            coinModel = CoinModel().also {
+                it.init(cookie)
+            }
+        }
     }
 
     fun getCoinInfo() {
         viewModelScope.launch (Dispatchers.IO){
-            coinModel.getCoinInfo(_coinInfo,_cookie)
+            coinModel.getCoinInfo(_coinInfo)
         }
     }
 
     fun getCoinDetailInfo() {
         viewModelScope.launch (Dispatchers.IO){
-            coinModel.getCoinDetailInfo(_coinDetail,_cookie)
+            coinModel.getCoinDetailInfo(_coinDetail)
         }
     }
 }

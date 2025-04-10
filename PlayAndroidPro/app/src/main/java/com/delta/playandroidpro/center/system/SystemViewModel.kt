@@ -28,14 +28,26 @@ class SystemViewModel:ViewModel() {
     val currentArticleList : StateFlow<PagingData<Article>> get() = _currentArticleList
 
     // ViewModel私用成员
-    private val systemModel by lazy { SystemModel() }
+    private lateinit var systemModel: SystemModel
     private val mutex = Mutex()
+    private val _cookie = MutableLiveData<String>()
+    private val cookie :LiveData<String> get() = _cookie
 
     // 暴露给model的成员变量
     private val _systemColumns = MutableLiveData<ArrayList<Column>>(arrayListOf())
     private val _currentArticleList = MutableStateFlow<PagingData<Article>>(PagingData.empty())
     private val _currentColumn = MutableLiveData<Column>()
     private val _exception = MutableLiveData<String>()
+
+    fun setCookie(cookie: String){
+        _cookie.value = cookie
+        if (!::systemModel.isInitialized){
+            systemModel = SystemModel().also {
+                it.init(cookie)
+            }
+        }
+    }
+
     fun getSystemColumn() {
         viewModelScope.launch (Dispatchers.IO){
             systemModel.getSystemColumn(_systemColumns)
@@ -52,13 +64,13 @@ class SystemViewModel:ViewModel() {
         }
     }
 
-    suspend fun collectArticle(article: Article,cookie:String) :Boolean=
+    suspend fun collectArticle(article: Article) :Boolean=
         mutex.withLock {
-            systemModel.collectArticle(_exception, article,cookie)
+            systemModel.collectArticle(_exception, article)
         }
 
-    suspend fun discollectArticle(article: Article,cookie:String) :Boolean=
+    suspend fun discollectArticle(article: Article) :Boolean=
         mutex.withLock {
-            systemModel.discollectArticle(_exception, article,cookie)
+            systemModel.discollectArticle(_exception, article)
         }
 }

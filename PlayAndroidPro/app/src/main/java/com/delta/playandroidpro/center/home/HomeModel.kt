@@ -17,8 +17,13 @@ import kotlinx.coroutines.flow.Flow
  * @date 2025/2/8 16:51
  */
 class HomeModel {
+
+    private lateinit var netProxy: HomeService
+    fun init(cookie: String){
+        netProxy = ServiceBuilder.buildService(HomeService::class.java, cookie)
+    }
     suspend fun getBannerList(_banners: MutableLiveData<List<Banner>>) {
-        ServiceBuilder.buildService(HomeService::class.java).banner().let {
+        netProxy.banner().let {
             if (it.isSuccessful && it.body() != null) {
                _banners.postValue(it.body()?.data)
             } else {
@@ -31,7 +36,7 @@ class HomeModel {
         articlesFlow.postValue(
             Pager(
                 config = PagingConfig(pageSize = 40, enablePlaceholders = true),
-                pagingSourceFactory = { ArticleDataSource() }
+                pagingSourceFactory = { ArticleDataSource(netProxy) }
             ).flow
         )
     }
@@ -39,10 +44,8 @@ class HomeModel {
     suspend fun collectArticle(
         _exception: MutableLiveData<String>,
         article: Article,
-        cookie: String
     ): Boolean {
-        ServiceBuilder.buildService(HomeService::class.java, cookie)
-            .collectInsideArticle(article.id).let {
+        netProxy.collectInsideArticle(article.id).let {
             if (it.isSuccessful && it.body() != null) {
                 if (it.body()?.errorCode == 0) {
                     return true
@@ -59,10 +62,8 @@ class HomeModel {
     suspend fun discollectArticle(
         _exception: MutableLiveData<String>,
         article: Article,
-        cookie: String
     ): Boolean {
-        ServiceBuilder.buildService(HomeService::class.java, cookie)
-            .unCollectInsideArticle(article.id).let {
+            netProxy.unCollectInsideArticle(article.id).let {
             if (it.isSuccessful && it.body() != null) {
                 if (it.body()?.errorCode == 0) {
                     return true
